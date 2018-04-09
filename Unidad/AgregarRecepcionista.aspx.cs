@@ -1,4 +1,5 @@
-﻿using Servicios;
+﻿using Entidades;
+using Servicios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,13 +7,12 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace SIBO
+namespace SIBO.Recepcionista
 {
-    public partial class AgregarUnidad : System.Web.UI.Page
+    public partial class AgregarRecepcionista : System.Web.UI.Page
     {
         #region variables globales
-        UnidadServicios unidadServicios = new UnidadServicios();
-
+        PersonaRecepcionistaServicios recepcionistaServicios = new PersonaRecepcionistaServicios();
         #endregion
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -26,7 +26,7 @@ namespace SIBO
             //[1]=Nuevo
             //[2]=Editar
             //[3]=Eliminar
-            Boolean[] permisos = Utilidades.permisosPorPagina(Page, "AdministrarUnidades");
+            Boolean[] permisos = Utilidades.permisosPorPagina(Page, "AdministrarRecepcionistaes");
 
             if (!permisos[1])
             {
@@ -37,8 +37,8 @@ namespace SIBO
             if (!Page.IsPostBack)
             {
                 
-                txtNombreUnidad.Attributes.Add("oninput", "validarTexto(this)");                
-                txbTelefonoUnidad.Attributes.Add("oninput", "validarTexto(this)");
+                txtNombreRecepcionista.Attributes.Add("oninput", "validarTexto(this)");                
+                txbTelefonoRecepcionista.Attributes.Add("oninput", "validarTexto(this)");
             }
         }
         #region logica
@@ -56,30 +56,30 @@ namespace SIBO
         public Boolean validarCampos()
         {
             Boolean validados = true;
-            divNombreUnidadIncorrecto.Style.Add("display", "none");
-            divTelefonoUnidadIncorrecto.Style.Add("display", "none");
+            divNombreRecepcionistaIncorrecto.Style.Add("display", "none");
+            divTelefonoRecepcionistaIncorrecto.Style.Add("display", "none");
 
-            txtNombreUnidad.CssClass = "form-control";
-            txbTelefonoUnidad.CssClass = "form-control";
+            txtNombreRecepcionista.CssClass = "form-control";
+            txbTelefonoRecepcionista.CssClass = "form-control";
 
-            #region validacion nombre unidad
-            String nombreUnidad = txtNombreUnidad.Text;
+            #region validacion nombre Recepcionista
+            String nombreRecepcionista = txtNombreRecepcionista.Text;
 
-            if (nombreUnidad.Trim() == "")
+            if (nombreRecepcionista.Trim() == "")
             {
-                txtNombreUnidad.CssClass = "form-control alert-danger";
-                divNombreUnidadIncorrecto.Style.Add("display", "block");
+                txtNombreRecepcionista.CssClass = "form-control alert-danger";
+                divNombreRecepcionistaIncorrecto.Style.Add("display", "block");
 
                 validados = false;
             }
             #endregion
-            #region validacion telefono unidad
-            String telefonoUnidad = txbTelefonoUnidad.Text;
+            #region validacion telefono Recepcionista
+            String telefonoRecepcionista = txbTelefonoRecepcionista.Text;
 
-            if (telefonoUnidad.Trim() == "")
+            if (telefonoRecepcionista.Trim() == "")
             {
-                txbTelefonoUnidad.CssClass = "form-control alert-danger";
-                divTelefonoUnidadIncorrecto.Style.Add("display", "block");
+                txbTelefonoRecepcionista.CssClass = "form-control alert-danger";
+                divTelefonoRecepcionistaIncorrecto.Style.Add("display", "block");
 
                 validados = false;
             }
@@ -90,8 +90,8 @@ namespace SIBO
         /// <summary>
         /// Fabián Quirós Masís
         /// 09/04/2018
-        /// Efecto: Verifica que los datos de una Unidad esten completos y los guarda en la base de datos
-        /// redirecciona a la pantalla de Administrar Unidades
+        /// Efecto: Verifica que los datos de una Recepcionista esten completos y los guarda en la base de datos
+        /// redirecciona a la pantalla de Administrar Recepcionistaes
         /// Requiere:-
         /// Modifica:-
         /// Devuelve:-
@@ -101,20 +101,20 @@ namespace SIBO
         {
             if (validarCampos())
             {
-                Entidades.Unidad unidad = new Entidades.Unidad();
-                unidad.nombre = txtNombreUnidad.Text;
-                unidad.telefono = txbTelefonoUnidad.Text;
+                PersonaRecepcionista recepcionista = new Entidades.PersonaRecepcionista();
+                recepcionista.nombre = txtNombreRecepcionista.Text;
+                recepcionista.telefono = txbTelefonoRecepcionista.Text;
 
-                unidadServicios.insertarUnidad(unidad);
+                recepcionistaServicios.insertarRecepcionista(recepcionista);
 
-                String url = Page.ResolveUrl("~/Unidad/AdministrarUnidades.aspx");
+                String url = Page.ResolveUrl("~/Unidad/AdministrarRecepcionistaes.aspx");
                 Response.Redirect(url);
             }
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            String url = Page.ResolveUrl("~/Unidad/AdministrarUnidades.aspx");
+            String url = Page.ResolveUrl("~/Unidad/AdministrarRecepcionistaes.aspx");
             Response.Redirect(url);
         }
     }

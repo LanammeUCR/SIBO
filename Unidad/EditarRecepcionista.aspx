@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AgregarUnidad.aspx.cs" Inherits="SIBO.AgregarUnidad" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditarRecepcionista.aspx.cs" Inherits="SIBO.Unidad.EditarRecepcionista" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -8,7 +8,7 @@
             <%-- titulo accion--%>
             <div class="col-md-12 col-xs-12 col-sm-12">
                 <center>
-                        <asp:Label ID="lblAgregarUnida" runat="server" Text="Agregar Unidad" Font-Size="Large" ForeColor="Black"></asp:Label>
+                        <asp:Label ID="lblEditarUnida" runat="server" Text="Editar Unidad" Font-Size="Large" ForeColor="Black"></asp:Label>
                     </center>
             </div>
             <%-- fin titulo accion --%>
@@ -60,7 +60,7 @@
 
             <%-- botones --%>
             <div class="col-md-3 col-xs-3 col-sm-3 col-md-offset-9 col-xs-offset-9 col-sm-offset-9">
-                <asp:Button ID="btnAgregar" runat="server" Text="Agregar" CssClass="btn btn-success" OnClick="btnAgregar_Click" />
+                <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" CssClass="btn btn-success" OnClick="btnActualiza_Click" />
                 <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-danger" OnClick="btnCancelar_Click" />
             </div>
             <%-- fin botones --%>

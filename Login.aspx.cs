@@ -21,23 +21,6 @@ namespace SIBO
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            //BaseDatos basededatos = new BaseDatos();
-
-            //basededatos.servidorCP = "163.178.106.21";
-            //basededatos.baseCP = "Bienes_Institucionales";
-            //basededatos.usuarioCP = "sa";
-            //basededatos.contrasenaCP = "sa123!!";
-
-            //basededatos.servidorLogin = "163.178.106.21";
-            //basededatos.baseLogin = "Login";
-            //basededatos.usuarioLogin = "sa";
-            //basededatos.contrasenaLogin = "sa123!!";
-
-            //Archivo archivo = new Archivo();
-            //archivo.guardarArchivo(basededatos);
-
-
-
             Page.Master.FindControl("menu").Visible = false;
 
             Utilidades.SetLogDirectory();

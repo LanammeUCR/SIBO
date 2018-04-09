@@ -46,9 +46,7 @@ namespace SIBO.Unidad
             if (!Page.IsPostBack)
             {
                 Session["listaUnidades"] = null;
-                Session["unidadEditar"] = null;                
-                Session["unidadSeleccionada"] = null;              
-                txtAutorizadoPor.Text = (String)Session["nombreCompleto"];
+                Session["unidadEditar"] = null;                                                       
 
                 cargarDatosTblUnidades();              
             }
@@ -56,13 +54,23 @@ namespace SIBO.Unidad
         #endregion
 
         #region logica
+        /// <summary>
+        /// Fabián Quirós Masís
+        /// 09/04/2018
+        /// Efecto: Llenar la tabla con los datos de las unidades que se encuantran en la base de datos
+        /// Requiere:-
+        /// Modifica:-
+        /// Devuelve:-
+        /// </summary>
+        /// <returns>-</returns>
         public void cargarDatosTblUnidades() 
         {
             List<Entidades.Unidad> listasUniades = new List<Entidades.Unidad>();
             listasUniades = unidadServicios.getUnidades();
+            rpUnidad.DataSource = listasUniades;
             rpUnidad.DataBind();
-            Session["listaUnidades"] = listasUniades;
 
+            Session["listaUnidades"] = listasUniades;
         }
         #endregion
 
@@ -70,19 +78,72 @@ namespace SIBO.Unidad
        
         protected void btnNuevo_Click(object sender, EventArgs e)
         {
-            
+            String url = Page.ResolveUrl("~/Unidad/AgregarUnidad.aspx");
+            Response.Redirect(url);
         }
 
-        
+        /// <summary>
+        /// Fabián Quirós Masís
+        /// 09/04/2018
+        /// Efecto: Redirecciona a la pantalla donde se edita una unidad.
+        /// Requiere:-
+        /// Modifica:-
+        /// Devuelve:-
+        /// </summary>
+        /// <returns>-</returns>
         protected void btnEditar_Click(object sender, EventArgs e)
         {
-          
+            int idUnidad = Convert.ToInt32((((LinkButton)(sender)).CommandArgument).ToString());
+
+            List<Entidades.Unidad> listasUniades = (List<Entidades.Unidad>)Session["listaUnidades"];
+
+            Entidades.Unidad unidadEditar = new Entidades.Unidad();
+
+            foreach (Entidades.Unidad unidad in listasUniades)
+            {
+                if (unidad.idUnidad == idUnidad)
+                {
+                    unidadEditar = unidad;
+                    break;
+                }
+            }
+
+            Session["unidadEditar"] = unidadEditar;
+
+            String url = Page.ResolveUrl("~/Unidad/EditarUnidad.aspx");
+            Response.Redirect(url);
         }
 
-       
+        /// <summary>
+        /// Fabián Quirós Masís
+        /// 09/04/2018
+        /// Efecto: redirecciona a la pantalla donde se elimina una unidad
+        /// Requiere:
+        /// Modifica:
+        /// Devuelve:
+        /// </summary>
+        /// <returns></returns>
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            
+            int idUnidad = Convert.ToInt32((((LinkButton)(sender)).CommandArgument).ToString());
+
+            List<Entidades.Unidad> listasUniades = (List<Entidades.Unidad>)Session["listaUnidades"];
+
+            Entidades.Unidad unidadEliminar = new Entidades.Unidad();
+
+            foreach (Entidades.Unidad unidad in listasUniades)
+            {
+                if (unidad.idUnidad == idUnidad)
+                {
+                    unidadEliminar = unidad;
+                    break;
+                }
+            }
+
+            Session["unidadEditar"] = unidadEliminar;
+
+            String url = Page.ResolveUrl("~/Unidad/EliminarUnidad.aspx");
+            Response.Redirect(url);
 
         }
         protected void rpUnidad_ItemDataBound(object sender, RepeaterItemEventArgs e)

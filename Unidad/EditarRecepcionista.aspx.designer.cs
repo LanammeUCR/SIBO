@@ -10,7 +10,7 @@
 namespace SIBO.Unidad {
     
     
-    public partial class EditarUnidad {
+    public partial class EditarRecepcionista {
         
         /// <summary>
         /// Control lblEditarUnida.
