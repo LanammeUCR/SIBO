@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace SIBO.Proveedor {
+namespace SIBO.Pedidos {
     
     
     public partial class AgregarProveedor {

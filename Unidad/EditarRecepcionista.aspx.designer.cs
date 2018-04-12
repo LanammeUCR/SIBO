@@ -13,85 +13,157 @@ namespace SIBO.Unidad {
     public partial class EditarRecepcionista {
         
         /// <summary>
-        /// Control lblEditarUnida.
+        /// Control lblEditarRecepcionista.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEditarUnida;
+        protected global::System.Web.UI.WebControls.Label lblEditarRecepcionista;
         
         /// <summary>
-        /// Control lblNombreUnidad.
+        /// Control lbCedulaRecepcionista.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNombreUnidad;
+        protected global::System.Web.UI.WebControls.Label lbCedulaRecepcionista;
         
         /// <summary>
-        /// Control txtNombreUnidad.
+        /// Control txbCedulaRecepcionista.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombreUnidad;
+        protected global::System.Web.UI.WebControls.TextBox txbCedulaRecepcionista;
         
         /// <summary>
-        /// Control divNombreUnidadIncorrecto.
+        /// Control divCedulaRecepcionistaIncorrecto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divNombreUnidadIncorrecto;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divCedulaRecepcionistaIncorrecto;
         
         /// <summary>
-        /// Control lblNombreUnidadIncorrecto.
+        /// Control lblCedulaPersonaIncorrecto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNombreUnidadIncorrecto;
+        protected global::System.Web.UI.WebControls.Label lblCedulaPersonaIncorrecto;
         
         /// <summary>
-        /// Control lblTelefonoUnidad.
+        /// Control lblNombreRecepcionista.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTelefonoUnidad;
+        protected global::System.Web.UI.WebControls.Label lblNombreRecepcionista;
         
         /// <summary>
-        /// Control txbTelefonoUnidad.
+        /// Control txbNombreRecepcionista.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbTelefonoUnidad;
+        protected global::System.Web.UI.WebControls.TextBox txbNombreRecepcionista;
         
         /// <summary>
-        /// Control divTelefonoUnidadIncorrecto.
+        /// Control divNombreRecepcionistaIncorrecto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divTelefonoUnidadIncorrecto;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divNombreRecepcionistaIncorrecto;
         
         /// <summary>
-        /// Control lblTeléfonoUnidadIncorrecto.
+        /// Control lblNombreRecepcionistaIncorrecto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTeléfonoUnidadIncorrecto;
+        protected global::System.Web.UI.WebControls.Label lblNombreRecepcionistaIncorrecto;
+        
+        /// <summary>
+        /// Control lblApellidosRecepcionista.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblApellidosRecepcionista;
+        
+        /// <summary>
+        /// Control txbApellidosRecepcionista.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txbApellidosRecepcionista;
+        
+        /// <summary>
+        /// Control divApellidosRecepcionistaIncorrecto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divApellidosRecepcionistaIncorrecto;
+        
+        /// <summary>
+        /// Control lblApellidosRecepcionistaIncorrecto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblApellidosRecepcionistaIncorrecto;
+        
+        /// <summary>
+        /// Control lblCorreoRecepcionista.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCorreoRecepcionista;
+        
+        /// <summary>
+        /// Control txbCorreoRecepcionista.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txbCorreoRecepcionista;
+        
+        /// <summary>
+        /// Control divCorreoRecepcionistaIncorrecto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divCorreoRecepcionistaIncorrecto;
+        
+        /// <summary>
+        /// Control lblCorreoRecepcionistaIncorrecto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCorreoRecepcionistaIncorrecto;
         
         /// <summary>
         /// Control btnActualizar.

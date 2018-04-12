@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AgregarRecepcionista.aspx.cs" Inherits="SIBO.Recepcionista.AgregarRecepcionista" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AgregarRecepcionista.aspx.cs" Inherits="SIBO.Unidad.AgregarRecepcionista" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -8,7 +8,7 @@
             <%-- titulo accion--%>
             <div class="col-md-12 col-xs-12 col-sm-12">
                 <center>
-                        <asp:Label ID="lblAgregarRecepcionista" runat="server" Text="Editar Recepcionista" Font-Size="Large" ForeColor="Black"></asp:Label>
+                        <asp:Label ID="lblAgregarRecepcionista" runat="server" Text="Agregar Recepcionista" Font-Size="Large" ForeColor="Black"></asp:Label>
                     </center>
             </div>
             <%-- fin titulo accion --%>
@@ -60,19 +60,6 @@
             <div class="col-md-12 col-xs-12 col-sm-12">
 
                 <div class="col-md-2 col-xs-2 col-sm-2">
-                    <asp:Label ID="lblTelefonoRecepcionista" runat="server" Text="Teléfono <span style='color:red'>*</span> " Font-Size="Medium" ForeColor="Black" CssClass="label"></asp:Label>
-                </div>
-                <div class="col-md-4 col-xs-4 col-sm-4">
-                    <asp:TextBox class="form-control" ID="txbTelefonoRecepcionista" runat="server"></asp:TextBox>
-                </div>
-                <div id="divTelefonoRecepcionistaIncorrecto" runat="server" style="display: none" class="col-md-6 col-xs-6 col-sm-6">
-                    <asp:Label ID="lblTeléfonoRecepcionistaIncorrecto" runat="server" Font-Size="Small" class="label alert-danger" Text="Espacio Obligatorio" ForeColor="Red"></asp:Label>
-                </div>
-
-            </div>
-            <div class="col-md-12 col-xs-12 col-sm-12">
-
-                <div class="col-md-2 col-xs-2 col-sm-2">
                     <asp:Label ID="lblCorreoRecepcionista" runat="server" Text="Correo Eletrónico <span style='color:red'>*</span> " Font-Size="Medium" ForeColor="Black" CssClass="label"></asp:Label>
                 </div>
                 <div class="col-md-4 col-xs-4 col-sm-4">
@@ -115,9 +102,19 @@
         function validarTexto(txtBox) {
             var id = txtBox.id.substring(12);
 
+            if (id == "txbCedulaRecepcionista") {
+                var cedulaRecepcionistaIncorrecto = document.getElementById('<%= divCedulaRecepcionistaIncorrecto.ClientID %>');
+                if (txtBox.value != "") {
+                    txtBox.className = "form-control";
 
+                    cedulaRecepcionistaIncorrecto.style.display = 'none';
+                } else {
+                    txtBox.className = "form-control alert-danger";
+                    cedulaRecepcionistaIncorrecto.style.display = 'block';
+                }
+            }
 
-            if (id == "txtNombreRecepcionista") {
+            if (id == "txbNombreRecepcionista") {
                 var nombreRecepcionistaIncorrecto = document.getElementById('<%= divNombreRecepcionistaIncorrecto.ClientID %>');
                 if (txtBox.value != "") {
                     txtBox.className = "form-control";
@@ -129,17 +126,29 @@
                 }
             }
 
-            if (id == "txbTelefonoRecepcionista") {
-                var nombreRecepcionistaIncorrecto = document.getElementById('<%= divNombreRecepcionistaIncorrecto.ClientID %>');
-                if (numero != "" && /^([0-9])*[.]?[0-9]*$/.test(numero)) {
+            if (id == "txb") {
+                var apellidosRecepcionistaIncorrecto = document.getElementById('<%= divApellidosRecepcionistaIncorrecto.ClientID %>');
+                if (txtBox.value != "") {
                     txtBox.className = "form-control";
 
-                    nombreRecepcionistaIncorrecto.style.display = 'none';
+                    apellidosRecepcionistaIncorrecto.style.display = 'none';
                 } else {
                     txtBox.className = "form-control alert-danger";
-                    nombreRecepcionistaIncorrecto.style.display = 'block';
+                    apellidosRecepcionistaIncorrecto.style.display = 'block';
                 }
             }
+
+            if (id == "txbCorreoRecepcionista") {
+                var correoRecepcionistaIncorrecto = document.getElementById('<%= divCorreoRecepcionistaIncorrecto.ClientID %>');
+                 if (txtBox.value != "") {
+                     txtBox.className = "form-control";
+
+                     correoRecepcionistaIncorrecto.style.display = 'none';
+                 } else {
+                     txtBox.className = "form-control alert-danger";
+                     correoRecepcionistaIncorrecto.style.display = 'block';
+                 }
+             }
         }
     </script>
 </asp:Content>

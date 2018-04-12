@@ -94,18 +94,15 @@
                                             Unidad<span class="caret"></span></a>
                                         <ul class="dropdown-menu" role="menu">
                                             <li><a href='<%=Page.ResolveUrl("~/Unidad/AdministrarUnidades.aspx") %>'>Unidad</a></li>                                           
-                                            <li><a href='<%=Page.ResolveUrl("~/Unidad/AdministrarRecepcionista.aspx") %>'>Recepcionista</a></li> 
+                                            <li><a href='<%=Page.ResolveUrl("~/Unidad/AdministrarRecepcionistas.aspx") %>'>Recepcionista</a></li> 
                                            
                                         </ul>
                                     </li>
                                     <li class="dropdown" aria-expanded="true">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                            Proveedor<span class="caret"></span></a>
+                                            Pedidos<span class="caret"></span></a>
                                         <ul class="dropdown-menu" role="menu">
-                                             <li><a href='<%=Page.ResolveUrl("~/Proveedor/AgregarProveedor.aspx") %>'>Agregar Proveedor</a></li>
-                                             <li><a href="Default.aspx">Editar Proveedor</a></li>
-                                             <li><a href="Default.aspx">Eliminar Proveedor</a></li>
-                                            <li><a href='<%=Page.ResolveUrl("~/") %>'>ST's</a></li>
+                                             <li><a href='<%=Page.ResolveUrl("~/Proveedor/AdministrarProveedores.aspx") %>'>Proveedor</a></li>                                          
 
                                         </ul>
                                     </li>

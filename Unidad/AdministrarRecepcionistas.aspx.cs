@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace SIBO.Unidad
 {
-    public partial class AdministradorRecepcionista : System.Web.UI.Page
+    public partial class AdministrarRecepcionistas : System.Web.UI.Page
     {
         #region variables globales
         PersonaRecepcionistaServicios recepcionistaServicios = new PersonaRecepcionistaServicios();
@@ -65,7 +65,7 @@ namespace SIBO.Unidad
         /// <summary>
         /// Fabián Quirós Masís
         /// 09/04/2018
-        /// Efecto: Redirecciona a la pantalla donde se edita una unidad.
+        /// Efecto: Redirecciona a la pantalla donde se edita una recepcionista.
         /// Requiere:-
         /// Modifica:-
         /// Devuelve:-
@@ -73,22 +73,22 @@ namespace SIBO.Unidad
         /// <returns>-</returns>
         protected void btnEditar_Click(object sender, EventArgs e)
         {
-            int idUnidad = Convert.ToInt32((((LinkButton)(sender)).CommandArgument).ToString());
+            int idPersona = Convert.ToInt32((((LinkButton)(sender)).CommandArgument).ToString());
 
-            List<Entidades.Unidad> listasUniades = (List<Entidades.Unidad>)Session["listaRecepcionistas"];
+            List<PersonaRecepcionista> listaRecepcionistas = (List<PersonaRecepcionista>)Session["listaRecepcionistas"];
 
-            Entidades.Unidad unidadEditar = new Entidades.Unidad();
+            PersonaRecepcionista recepcionistaEditar = new PersonaRecepcionista();
 
-            foreach (Entidades.Unidad unidad in listasUniades)
+            foreach (PersonaRecepcionista recepcionista in listaRecepcionistas)
             {
-                if (unidad.idUnidad == idUnidad)
+                if (recepcionista.idPersona == idPersona)
                 {
-                    unidadEditar = unidad;
+                    recepcionistaEditar = recepcionista;
                     break;
                 }
             }
 
-            Session["recepcionistaEditar"] = unidadEditar;
+            Session["recepcionistaEditar"] = recepcionistaEditar;
 
             String url = Page.ResolveUrl("~/Unidad/EditarRecepcionista.aspx");
             Response.Redirect(url);
@@ -97,7 +97,7 @@ namespace SIBO.Unidad
         /// <summary>
         /// Fabián Quirós Masís
         /// 09/04/2018
-        /// Efecto: redirecciona a la pantalla donde se elimina una unidad
+        /// Efecto: redirecciona a la pantalla donde se elimina una recepcionista
         /// Requiere:
         /// Modifica:
         /// Devuelve:
@@ -105,22 +105,22 @@ namespace SIBO.Unidad
         /// <returns></returns>
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            int idUnidad = Convert.ToInt32((((LinkButton)(sender)).CommandArgument).ToString());
+            int idPersona = Convert.ToInt32((((LinkButton)(sender)).CommandArgument).ToString());
 
-            List<Entidades.Unidad> listasUniades = (List<Entidades.Unidad>)Session["listaRecepcionistas"];
+            List<PersonaRecepcionista> listaRecepcionistas = (List<PersonaRecepcionista>)Session["listaRecepcionistas"];
 
-            Entidades.Unidad unidadEliminar = new Entidades.Unidad();
+            PersonaRecepcionista recepcionistaEliminar = new PersonaRecepcionista();
 
-            foreach (Entidades.Unidad unidad in listasUniades)
+            foreach (PersonaRecepcionista recepcionista in listaRecepcionistas)
             {
-                if (unidad.idUnidad == idUnidad)
+                if (recepcionista.idPersona == idPersona)
                 {
-                    unidadEliminar = unidad;
+                    recepcionistaEliminar = recepcionista;
                     break;
                 }
             }
 
-            Session["recepcionistaEditar"] = unidadEliminar;
+            Session["recepcionistaEliminar"] = recepcionistaEliminar;
 
             String url = Page.ResolveUrl("~/Unidad/EliminarRecepcionista.aspx");
             Response.Redirect(url);

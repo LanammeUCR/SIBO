@@ -71,8 +71,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ArchivoBaseDatos.txt" />
+    <Content Include="Pedidos\AdministrarProveedores.aspx" />
     <Content Include="Unidad\AdministrarUnidades.aspx" />
-    <Content Include="Unidad\AdministrarRecepcionista.aspx" />
+    <Content Include="Unidad\AdministrarRecepcionistas.aspx" />
     <Content Include="Unidad\AgregarRecepcionista.aspx" />
     <Content Include="Unidad\AgregarUnidad.aspx" />
     <Content Include="Configuracion\Configuracion.aspx" />
@@ -106,7 +107,7 @@
     <Content Include="Imagenes\logo_LANAMME-140x140.png" />
     <Content Include="Imagenes\UCR informe.png" />
     <Content Include="Login.aspx" />
-    <Content Include="Proveedor\AgregarProveedor.aspx" />
+    <Content Include="Pedidos\AgregarProveedor.aspx" />
     <Content Include="Scripts\abrirfile.js" />
     <Content Include="Scripts\bootbox.min.js" />
     <Content Include="Scripts\bootstrap-datetimepicker.js" />
@@ -178,6 +179,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pedidos\AdministrarProveedores.aspx.cs">
+      <DependentUpon>AdministrarProveedores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pedidos\AdministrarProveedores.aspx.designer.cs">
+      <DependentUpon>AdministrarProveedores.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Unidad\AdministrarUnidades.aspx.cs">
       <DependentUpon>AdministrarUnidades.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -185,12 +193,12 @@
     <Compile Include="Unidad\AdministrarUnidades.aspx.designer.cs">
       <DependentUpon>AdministrarUnidades.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Unidad\AdministrarRecepcionista.aspx.cs">
-      <DependentUpon>AdministrarRecepcionista.aspx</DependentUpon>
+    <Compile Include="Unidad\AdministrarRecepcionistas.aspx.cs">
+      <DependentUpon>AdministrarRecepcionistas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Unidad\AdministrarRecepcionista.aspx.designer.cs">
-      <DependentUpon>AdministrarRecepcionista.aspx</DependentUpon>
+    <Compile Include="Unidad\AdministrarRecepcionistas.aspx.designer.cs">
+      <DependentUpon>AdministrarRecepcionistas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Unidad\AgregarRecepcionista.aspx.cs">
       <DependentUpon>AgregarRecepcionista.aspx</DependentUpon>
@@ -228,11 +236,11 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Proveedor\AgregarProveedor.aspx.cs">
+    <Compile Include="Pedidos\AgregarProveedor.aspx.cs">
       <DependentUpon>AgregarProveedor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Proveedor\AgregarProveedor.aspx.designer.cs">
+    <Compile Include="Pedidos\AgregarProveedor.aspx.designer.cs">
       <DependentUpon>AgregarProveedor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
@@ -287,8 +295,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Articulo\" />
-    <Folder Include="Pedidos\" />
-    <Folder Include="Persona\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

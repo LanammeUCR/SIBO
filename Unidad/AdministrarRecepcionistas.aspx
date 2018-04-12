@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AdministrarRecepcionista.aspx.cs" Inherits="SIBO.Unidad.AdministradorRecepcionista" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AdministrarRecepcionistas.aspx.cs" Inherits="SIBO.Unidad.AdministrarRecepcionistas" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -25,8 +25,7 @@
                                 <tr>
                                     <th></th>
                                     <th>Cédula</th>
-                                    <th>Nombre </th>
-                                    <th>Número Teléfono</th>
+                                    <th>Nombre </th>                                 
                                     <th>Correo Electrónico</th>
                                 </tr>
                             </thead>
@@ -35,18 +34,15 @@
                     <ItemTemplate>
                         <tr>
                             <td>
-                                <asp:LinkButton ID="btnEditar" runat="server" ToolTip="Editar" OnClick="btnEditar_Click" CommandArgument='<%# Eval("idUnidad") %>'><span class="btn glyphicon glyphicon-pencil"></span></asp:LinkButton>
-                                <asp:LinkButton ID="btnEliminar" runat="server" ToolTip="Eliminar" OnClick="btnEliminar_Click" CommandArgument='<%# Eval("idUnidad") %>'><span class="btn glyphicon glyphicon-trash"></span></asp:LinkButton>
+                                <asp:LinkButton ID="btnEditar" runat="server" ToolTip="Editar" OnClick="btnEditar_Click" CommandArgument='<%# Eval("idPersona") %>'><span class="btn glyphicon glyphicon-pencil"></span></asp:LinkButton>
+                                <asp:LinkButton ID="btnEliminar" runat="server" ToolTip="Eliminar" OnClick="btnEliminar_Click" CommandArgument='<%# Eval("idPersona") %>'><span class="btn glyphicon glyphicon-trash"></span></asp:LinkButton>
                             </td>
                             <td>
                                 <%# Eval("cedula") %>
                             </td>
                              <td>
                                 <%# Eval("nombre") %> <%# Eval("apellidos") %>
-                            </td>
-                            <td>
-                                <%# Eval("telefono") %>
-                            </td>  
+                            </td>                           
                             <td>
                                 <%# Eval("correo") %>
                             </td>                           
@@ -59,8 +55,7 @@
                             <tr id="filterrow">
                                 <td></td>
                                 <th>Cédula</th>
-                                <th>Nombre </th>
-                                <th>Número Teléfono</th>
+                                <th>Nombre </th>                           
                                 <th>Correo Electrónico</th>                           
                             </tr>
                         </thead>

@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace SIBO.Proveedor
+namespace SIBO.Pedidos
 {
     public partial class AgregarProveedor : System.Web.UI.Page
     {

@@ -91,18 +91,17 @@
                 }
             }
             
-            if (id == "txbTelefonoUnidad")
-            {
-                var nombreUnidadIncorrecto = document.getElementById('<%= divNombreUnidadIncorrecto.ClientID %>');
-                if (numero != "" && /^([0-9])*[.]?[0-9]*$/.test(numero)) {
-                    txtBox.className = "form-control";
+            if (id == "txbTelefonoUnidad") {
+                var telefonoUnidadIncorrecto = document.getElementById('<%= divTelefonoUnidadIncorrecto.ClientID %>');
+                 if (txtBox.value != "") {
+                     txtBox.className = "form-control";
 
-                    nombreUnidadIncorrecto.style.display = 'none';
-                } else {
-                        txtBox.className = "form-control alert-danger";
-                        nombreUnidadIncorrecto.style.display = 'block';
-            }
-            }
+                     telefonoUnidadIncorrecto.style.display = 'none';
+                 } else {
+                     txtBox.className = "form-control alert-danger";
+                     telefonoUnidadIncorrecto.style.display = 'block';
+                 }
+             }
         }
     </script>
 </asp:Content>

@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace SIBO.Recepcionista
+namespace SIBO.Unidad
 {
     public partial class AgregarRecepcionista : System.Web.UI.Page
     {
@@ -36,9 +36,11 @@ namespace SIBO.Recepcionista
 
             if (!Page.IsPostBack)
             {
-                
-                txtNombreRecepcionista.Attributes.Add("oninput", "validarTexto(this)");                
-                txbTelefonoRecepcionista.Attributes.Add("oninput", "validarTexto(this)");
+
+                txbCedulaRecepcionista.Attributes.Add("oninput", "validarTexto(this)");
+                txbNombreRecepcionista.Attributes.Add("oninput", "validarTexto(this)");  
+                txbApellidosRecepcionista.Attributes.Add("oninput", "validarTexto(this)");             
+                txbCorreoRecepcionista.Attributes.Add("oninput", "validarTexto(this)");
             }
         }
         #region logica
@@ -56,37 +58,68 @@ namespace SIBO.Recepcionista
         public Boolean validarCampos()
         {
             Boolean validados = true;
+            divCedulaRecepcionistaIncorrecto.Style.Add("display","none");
             divNombreRecepcionistaIncorrecto.Style.Add("display", "none");
-            divTelefonoRecepcionistaIncorrecto.Style.Add("display", "none");
+            divApellidosRecepcionistaIncorrecto.Style.Add("display", "none");
+            divCorreoRecepcionistaIncorrecto.Style.Add("display", "none");
 
-            txtNombreRecepcionista.CssClass = "form-control";
-            txbTelefonoRecepcionista.CssClass = "form-control";
+            txbCedulaRecepcionista.CssClass = "form-control";
+            txbNombreRecepcionista.CssClass = "form-control";
+            txbApellidosRecepcionista.CssClass = "form-control";
+            txbCorreoRecepcionista.CssClass = "form-control";
+         
+            #region validacion cedula Recepcionista
+            String cedulaRecepcionista = txbCedulaRecepcionista.Text;
+
+            if (cedulaRecepcionista.Trim() == "")
+            {
+                txbCedulaRecepcionista.CssClass = "form-control alert-danger";
+                divCedulaRecepcionistaIncorrecto.Style.Add("display", "block");
+
+                validados = false;
+            }
+            #endregion
 
             #region validacion nombre Recepcionista
-            String nombreRecepcionista = txtNombreRecepcionista.Text;
+            String nombreRecepcionista = txbNombreRecepcionista.Text;
 
             if (nombreRecepcionista.Trim() == "")
             {
-                txtNombreRecepcionista.CssClass = "form-control alert-danger";
+                txbNombreRecepcionista.CssClass = "form-control alert-danger";
                 divNombreRecepcionistaIncorrecto.Style.Add("display", "block");
 
                 validados = false;
             }
             #endregion
-            #region validacion telefono Recepcionista
-            String telefonoRecepcionista = txbTelefonoRecepcionista.Text;
 
-            if (telefonoRecepcionista.Trim() == "")
+            #region validacion apellidos Recepcionista
+            String apellidosRecepcionista = txbApellidosRecepcionista.Text;
+
+            if (apellidosRecepcionista.Trim() == "")
             {
-                txbTelefonoRecepcionista.CssClass = "form-control alert-danger";
-                divTelefonoRecepcionistaIncorrecto.Style.Add("display", "block");
+                txbApellidosRecepcionista.CssClass = "form-control alert-danger";
+                divApellidosRecepcionistaIncorrecto.Style.Add("display", "block");
 
                 validados = false;
             }
             #endregion
+
+            #region validacion correo Recepcionista
+            String correoRecepcionista = txbCorreoRecepcionista.Text;
+
+            if (correoRecepcionista.Trim() == "")
+            {
+                txbCorreoRecepcionista.CssClass = "form-control alert-danger";
+                divCorreoRecepcionistaIncorrecto.Style.Add("display", "block");
+
+                validados = false;
+            }
+            #endregion
+           
             return validados;
         }
         #endregion
+
         /// <summary>
         /// Fabián Quirós Masís
         /// 09/04/2018
@@ -102,12 +135,14 @@ namespace SIBO.Recepcionista
             if (validarCampos())
             {
                 PersonaRecepcionista recepcionista = new Entidades.PersonaRecepcionista();
-                recepcionista.nombre = txtNombreRecepcionista.Text;
-                recepcionista.telefono = txbTelefonoRecepcionista.Text;
+                recepcionista.cedula = txbCedulaRecepcionista.Text;
+                recepcionista.nombre = txbNombreRecepcionista.Text;
+                recepcionista.apellidos = txbApellidosRecepcionista.Text;
+                recepcionista.correo = txbCorreoRecepcionista.Text;
 
                 recepcionistaServicios.insertarRecepcionista(recepcionista);
 
-                String url = Page.ResolveUrl("~/Unidad/AdministrarRecepcionistaes.aspx");
+                String url = Page.ResolveUrl("~/Unidad/AdministrarRecepcionistas.aspx");
                 Response.Redirect(url);
             }
         }

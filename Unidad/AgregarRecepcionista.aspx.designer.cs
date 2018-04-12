@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace SIBO.Recepcionista {
+namespace SIBO.Unidad {
     
     
     public partial class AgregarRecepcionista {
@@ -128,42 +128,6 @@ namespace SIBO.Recepcionista {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblApellidosRecepcionistaIncorrecto;
-        
-        /// <summary>
-        /// Control lblTelefonoRecepcionista.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTelefonoRecepcionista;
-        
-        /// <summary>
-        /// Control txbTelefonoRecepcionista.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbTelefonoRecepcionista;
-        
-        /// <summary>
-        /// Control divTelefonoRecepcionistaIncorrecto.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divTelefonoRecepcionistaIncorrecto;
-        
-        /// <summary>
-        /// Control lblTeléfonoRecepcionistaIncorrecto.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTeléfonoRecepcionistaIncorrecto;
         
         /// <summary>
         /// Control lblCorreoRecepcionista.
