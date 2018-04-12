@@ -22,13 +22,13 @@ namespace SIBO.Pedidos {
         protected global::System.Web.UI.WebControls.Label lblAdministrarProveedores;
         
         /// <summary>
-        /// Control rpRecepcionista.
+        /// Control rpProveedor.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rpRecepcionista;
+        protected global::System.Web.UI.WebControls.Repeater rpProveedor;
         
         /// <summary>
         /// Control btnNuevo.

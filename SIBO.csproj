@@ -72,6 +72,8 @@
   <ItemGroup>
     <Content Include="ArchivoBaseDatos.txt" />
     <Content Include="Pedidos\AdministrarProveedores.aspx" />
+    <Content Include="Pedidos\EditarProveedor.aspx" />
+    <Content Include="Pedidos\EliminarProveedor.aspx" />
     <Content Include="Unidad\AdministrarUnidades.aspx" />
     <Content Include="Unidad\AdministrarRecepcionistas.aspx" />
     <Content Include="Unidad\AgregarRecepcionista.aspx" />
@@ -185,6 +187,20 @@
     </Compile>
     <Compile Include="Pedidos\AdministrarProveedores.aspx.designer.cs">
       <DependentUpon>AdministrarProveedores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pedidos\EditarProveedor.aspx.cs">
+      <DependentUpon>EditarProveedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pedidos\EditarProveedor.aspx.designer.cs">
+      <DependentUpon>EditarProveedor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pedidos\EliminarProveedor.aspx.cs">
+      <DependentUpon>EliminarProveedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pedidos\EliminarProveedor.aspx.designer.cs">
+      <DependentUpon>EliminarProveedor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Unidad\AdministrarUnidades.aspx.cs">
       <DependentUpon>AdministrarUnidades.aspx</DependentUpon>

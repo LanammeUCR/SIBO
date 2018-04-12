@@ -43,7 +43,8 @@ namespace SIBO.Unidad
             if (!Page.IsPostBack)
             {
                 Session["listaRecepcionistas"] = null;
-                Session["recepcionistaEditar"] = null;              
+                Session["recepcionistaEditar"] = null;
+                Session["recepcionistaEliminar"] = null;  
 
 
                 cargarDatosTblRecepcionistas();

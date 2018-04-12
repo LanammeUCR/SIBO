@@ -18,9 +18,9 @@
 
             <div class="col-md-12 col-xs-12 col-sm-12" style="text-align: center; overflow-y: auto; top: 0px; left: 0px;">
 
-                <asp:Repeater ID="rpRecepcionista" runat="server" OnItemDataBound="rpRecepcionista_ItemDataBound">
+                <asp:Repeater ID="rpProveedor" runat="server" OnItemDataBound="rpProveedor_ItemDataBound">
                     <HeaderTemplate>
-                        <table id="tblRecepcionista" class="row-border table-striped">
+                        <table id="tblProveedor" class="row-border table-striped">
                             <thead>
                                 <tr>
                                     <th></th>
@@ -35,8 +35,8 @@
                     <ItemTemplate>
                         <tr>
                             <td>
-                                <asp:LinkButton ID="btnEditar" runat="server" ToolTip="Editar" OnClick="btnEditar_Click" CommandArgument='<%# Eval("idPersona") %>'><span class="btn glyphicon glyphicon-pencil"></span></asp:LinkButton>
-                                <asp:LinkButton ID="btnEliminar" runat="server" ToolTip="Eliminar" OnClick="btnEliminar_Click" CommandArgument='<%# Eval("idPersona") %>'><span class="btn glyphicon glyphicon-trash"></span></asp:LinkButton>
+                                <asp:LinkButton ID="btnEditar" runat="server" ToolTip="Editar" OnClick="btnEditar_Click" CommandArgument='<%# Eval("idProveedor") %>'><span class="btn glyphicon glyphicon-pencil"></span></asp:LinkButton>
+                                <asp:LinkButton ID="btnEliminar" runat="server" ToolTip="Eliminar" OnClick="btnEliminar_Click" CommandArgument='<%# Eval("idProveedor") %>'><span class="btn glyphicon glyphicon-trash"></span></asp:LinkButton>
                             </td>
                             <td>
                                 <%# Eval("cedula") %>
@@ -77,7 +77,7 @@
 
             <%-- botones --%>
             <div class="col-md-2 col-xs-2 col-sm-2 col-md-offset-10 col-xs-offset-10 col-sm-offset-10">
-                <asp:Button ID="btnNuevo" runat="server" Text="Agregar Recepcionista" CssClass="btn btn-primary" OnClick="btnNuevo_Click" />
+                <asp:Button ID="btnNuevo" runat="server" Text="Agregar Proveedor" CssClass="btn btn-primary" OnClick="btnNuevo_Click" />
             </div>
             <%-- fin botones --%>          
         </div>
@@ -93,13 +93,13 @@
     <!-- script tabla jquery -->
     <script type="text/javascript">
 
-        $('#tblRecepcionista thead tr#filterrow th').each(function () {
-            var campoBusqueda = $('#tblRecepcionista thead th').eq($(this).index()).text();
+        $('#tblProveedor thead tr#filterrow th').each(function () {
+            var campoBusqueda = $('#tblProveedor thead th').eq($(this).index()).text();
             $(this).html('<input type="text" style="text-align: center" onclick="stopPropagation(event);" placeholder="Buscar ' + campoBusqueda + '" />');
         });
 
         // DataTable
-        var table = $('#tblRecepcionista').DataTable({
+        var table = $('#tblProveedor').DataTable({
             orderCellsTop: true,
             "iDisplayLength": 10,
             "aLengthMenu": [[2, 5, 10, -1], [2, 5, 10, "All"]],
@@ -151,7 +151,7 @@
         });
 
         // aplicar filtro
-        $("#tblRecepcionista thead input").on('keyup change', function () {
+        $("#tblProveedor thead input").on('keyup change', function () {
             table
                 .column($(this).parent().index() + ':visible')
                 .search(this.value)
