@@ -1,11 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditarRecepcionista.aspx.cs" Inherits="SIBO.Unidad.EditarRecepcionista" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-<div class="divRedondo">
+    <div class="divRedondo">
         <div class="row">
 
-           
+
             <%-- titulo accion--%>
             <div class="col-md-12 col-xs-12 col-sm-12">
                 <center>
@@ -18,7 +19,7 @@
                 <hr />
             </div>
 
-             <%-- campos a llenar --%>
+            <%-- campos a llenar --%>
             <div class="col-md-12 col-xs-12 col-sm-12">
 
                 <div class="col-md-2 col-xs-2 col-sm-2">
@@ -31,6 +32,9 @@
                     <asp:Label ID="lblCedulaPersonaIncorrecto" runat="server" Font-Size="Small" class="label alert-danger" Text="Espacio Obligatorio" ForeColor="Red"></asp:Label>
                 </div>
 
+            </div>
+            <div class="col-md-12 col-xs-12 col-sm-12">
+                <br />
             </div>
             <div class="col-md-12 col-xs-12 col-sm-12">
 
@@ -46,6 +50,9 @@
 
             </div>
             <div class="col-md-12 col-xs-12 col-sm-12">
+                <br />
+            </div>
+            <div class="col-md-12 col-xs-12 col-sm-12">
 
                 <div class="col-md-2 col-xs-2 col-sm-2">
                     <asp:Label ID="lblApellidosRecepcionista" runat="server" Text="Apellidos <span style='color:red'>*</span> " Font-Size="Medium" ForeColor="Black" CssClass="label"></asp:Label>
@@ -57,6 +64,9 @@
                     <asp:Label ID="lblApellidosRecepcionistaIncorrecto" runat="server" Font-Size="Small" class="label alert-danger" Text="Espacio Obligatorio" ForeColor="Red"></asp:Label>
                 </div>
 
+            </div>
+            <div class="col-md-12 col-xs-12 col-sm-12">
+                <br />
             </div>
             <div class="col-md-12 col-xs-12 col-sm-12">
 

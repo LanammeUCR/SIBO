@@ -46,8 +46,10 @@ namespace SIBO.Unidad
             if (!Page.IsPostBack)
             {
                 Session["listaUnidades"] = null;
-                Session["unidadEditar"] = null;                                                       
-
+                Session["unidadEditar"] = null;
+                Session["unidadEliminar"] = null;
+                Session["unidadAsociar"] = null;                                                       
+                    
                 cargarDatosTblUnidades();              
             }
         }
@@ -65,12 +67,12 @@ namespace SIBO.Unidad
         /// <returns>-</returns>
         public void cargarDatosTblUnidades() 
         {
-            List<Entidades.Unidad> listasUniades = new List<Entidades.Unidad>();
-            listasUniades = unidadServicios.getUnidades();
-            rpUnidad.DataSource = listasUniades;
+            List<Entidades.Unidad> listaUniades = new List<Entidades.Unidad>();
+            listaUniades = unidadServicios.getUnidades();
+            rpUnidad.DataSource = listaUniades;
             rpUnidad.DataBind();
 
-            Session["listaUnidades"] = listasUniades;
+            Session["listaUnidades"] = listaUniades;
         }
         #endregion
 
@@ -95,11 +97,11 @@ namespace SIBO.Unidad
         {
             int idUnidad = Convert.ToInt32((((LinkButton)(sender)).CommandArgument).ToString());
 
-            List<Entidades.Unidad> listasUniades = (List<Entidades.Unidad>)Session["listaUnidades"];
+            List<Entidades.Unidad> listaUniades = (List<Entidades.Unidad>)Session["listaUnidades"];
 
             Entidades.Unidad unidadEditar = new Entidades.Unidad();
 
-            foreach (Entidades.Unidad unidad in listasUniades)
+            foreach (Entidades.Unidad unidad in listaUniades)
             {
                 if (unidad.idUnidad == idUnidad)
                 {
@@ -127,11 +129,11 @@ namespace SIBO.Unidad
         {
             int idUnidad = Convert.ToInt32((((LinkButton)(sender)).CommandArgument).ToString());
 
-            List<Entidades.Unidad> listasUniades = (List<Entidades.Unidad>)Session["listaUnidades"];
+            List<Entidades.Unidad> listaUniades = (List<Entidades.Unidad>)Session["listaUnidades"];
 
             Entidades.Unidad unidadEliminar = new Entidades.Unidad();
 
-            foreach (Entidades.Unidad unidad in listasUniades)
+            foreach (Entidades.Unidad unidad in listaUniades)
             {
                 if (unidad.idUnidad == idUnidad)
                 {
@@ -140,12 +142,37 @@ namespace SIBO.Unidad
                 }
             }
 
-            Session["unidadEditar"] = unidadEliminar;
+            Session["unidadEliminar"] = unidadEliminar;
 
             String url = Page.ResolveUrl("~/Unidad/EliminarUnidad.aspx");
             Response.Redirect(url);
 
         }
+
+        protected void btnAsociarRecepcionistas_Click(object sender, EventArgs e)
+        {
+            int idUnidad = Convert.ToInt32((((LinkButton)(sender)).CommandArgument).ToString());
+
+            List<Entidades.Unidad> listaUniades = (List<Entidades.Unidad>)Session["listaUnidades"];
+
+            Entidades.Unidad unidadEliminar = new Entidades.Unidad();
+
+            foreach (Entidades.Unidad unidad in listaUniades)
+            {
+                if (unidad.idUnidad == idUnidad)
+                {
+                    unidadEliminar = unidad;
+                    break;
+                }
+            }
+
+            Session["unidadAsociar"] = unidadEliminar;
+
+            String url = Page.ResolveUrl("~/Unidad/RecepcionistasPorUnidad.aspx");
+            Response.Redirect(url);
+
+        }
+
         protected void rpUnidad_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
             if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)

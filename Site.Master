@@ -1,4 +1,5 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="SIBO.SiteMaster" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -10,11 +11,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="cleartype" content="on" />
 
-  
+
     <!-- Bootstrap -->
     <link href="css/bootstrap.css" rel="stylesheet" />
     <%-- Estilos con formato UCR  --%>
-    <link href="css/Lanamme.css" rel="stylesheet" />  
+    <link href="css/Lanamme.css" rel="stylesheet" />
 
     <!-- Font Awesome -->
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
@@ -29,7 +30,7 @@
 
     <script src='<%=Page.ResolveUrl("~/Scripts/bootstrap-dialog.js") %>'></script>
     <script src='<%=Page.ResolveUrl("~/Scripts/Dialogo.js") %>'></script>
-    
+
 
     <title>LanammeUCR-SIBO</title>
     <link rel="icon" href='<%=Page.ResolveUrl("~/Imagenes/favicon.ico") %>' />
@@ -60,7 +61,7 @@
                                     </div>
                                 </div>
                                 <a href="http://www.lanamme.ucr.ac.cr/">
-                                    <img src='<%=Page.ResolveUrl("~/Imagenes/logoLanamme.png") %>'/></a>
+                                    <img src='<%=Page.ResolveUrl("~/Imagenes/logoLanamme.png") %>' /></a>
 
 
                             </div>
@@ -90,33 +91,37 @@
                                 <ul class="nav navbar-nav">
                                     <li class="dropdown">
                                         <%-----------------------PESTAÑAS-----------------------%>
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                            Unidad<span class="caret"></span></a>
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Unidades<span class="caret"></span></a>
                                         <ul class="dropdown-menu" role="menu">
-                                            <li><a href='<%=Page.ResolveUrl("~/Unidad/AdministrarUnidades.aspx") %>'>Unidad</a></li>                                           
-                                            <li><a href='<%=Page.ResolveUrl("~/Unidad/AdministrarRecepcionistas.aspx") %>'>Recepcionista</a></li> 
-                                           
+                                            <li><a href='<%=Page.ResolveUrl("~/Unidad/AdministrarUnidades.aspx") %>'>Unidades</a></li>
+                                            <li><a href='<%=Page.ResolveUrl("~/Unidad/AdministrarRecepcionistas.aspx") %>'>Recepcionistas</a></li>
+
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Bodegas<span class="caret"></span></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href='<%=Page.ResolveUrl("~/Bodega/AdministrarBodega.aspx") %>'>Bodegas</a></li>
+
                                         </ul>
                                     </li>
                                     <li class="dropdown" aria-expanded="true">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                            Pedidos<span class="caret"></span></a>
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Pedidos<span class="caret"></span></a>
                                         <ul class="dropdown-menu" role="menu">
-                                             <li><a href='<%=Page.ResolveUrl("~/Pedidos/AdministrarProveedores.aspx") %>'>Proveedor</a></li>                                          
+                                            <li><a href='<%=Page.ResolveUrl("~/Pedidos/AdministrarProveedores.aspx") %>'>Proveedores</a></li>
+
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown" aria-expanded="true">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Articulos<span class="caret"></span></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href='<%=Page.ResolveUrl("~/Articulo/AdministrarArticulos.aspx") %>'>Articulos</a></li>
+                                            <li><a href='<%=Page.ResolveUrl("~/Articulo/.aspx") %>'>Solicitudes de Articulos</a></li>
 
                                         </ul>
                                     </li>
                                     <li>
                                         <a href="Default.aspx">Informes</a>
-                                    </li>
-                                    <li class="dropdown" aria-expanded="true">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                            Configuración<span class="caret"></span></a>
-                                        <ul class="dropdown-menu" role="menu">
-                                            <li><a href='<%=Page.ResolveUrl("~/") %>'>Alimentación</a></li>
-                                        
-                                            
-                                        </ul>
                                     </li>
                                     <li>
                                         <a href='<%=Page.ResolveUrl("~/Default.aspx") %>'>Ayuda</a>

@@ -26,6 +26,7 @@
                                     <th></th>
                                     <th>Nombre Unidad</th>
                                     <th>Numero Teléfono</th>
+                                    <th></th>
                                 </tr>
                             </thead>
                     </HeaderTemplate>
@@ -41,7 +42,10 @@
                             </td>
                             <td>
                                 <%# Eval("telefono") %>
-                            </td>                           
+                            </td>  
+                            <td>
+                                 <asp:LinkButton ID="LinkButton1" runat="server" ToolTip="Recepcionistas" OnClick="btnAsociarRecepcionistas_Click" CommandArgument='<%# Eval("idUnidad") %>'>Recepcionistas</span></asp:LinkButton>                           
+                            </td>                         
                         </tr>
 
                     </ItemTemplate>

@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AgregarProveedor.aspx.cs" Inherits="SIBO.Pedidos.AgregarProveedor" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -18,20 +19,21 @@
             </div>
 
             <%-- campos a llenar --%>
-              <div class="col-md-12 col-xs-12 col-sm-12">
+            <div class="col-md-12 col-xs-12 col-sm-12">
 
                 <div class="col-md-2 col-xs-2 col-sm-2">
-                    <asp:Label ID="lblTipoCedula" runat="server" Text="Cédula <span style='color:red'>*</span> " Font-Size="Medium" ForeColor="Black" CssClass="label"></asp:Label>
+                    <asp:Label ID="lblTipoCedula" runat="server" Text="Tipo Identificación <span style='color:red'>*</span> " Font-Size="Medium" ForeColor="Black" CssClass="label"></asp:Label>
                 </div>
                 <div class="col-md-4 col-xs-4 col-sm-4">
-                    <asp:DropDownList class="form-control" ID="ddlTipoCedula" runat="server"></asp:DropDownList>
+                    <asp:DropDownList class="btn btn-default dropdown-toggle" ID="ddlTipoCedula" runat="server"></asp:DropDownList>
                 </div>
                 <div id="div1" runat="server" style="display: none" class="col-md-6 col-xs-6 col-sm-6">
-                    <asp:Label ID="lblTipoCedulaProveedorIncorrecta" runat="server" Font-Size="Small" class="label alert-danger" Text="Debe  Seleccionar un tipo" ForeColor="Red"></asp:Label>
+                    <asp:Label ID="lblTipoCedulaProveedorIncorrecta" runat="server" Font-Size="Small" class="label alert-danger" Text="Debe  Seleccionar un tipo de identificación" ForeColor="Red"></asp:Label>
                 </div>
-
             </div>
-
+            <div class="col-md-12 col-xs-12 col-sm-12">
+                <br />
+            </div>
             <div class="col-md-12 col-xs-12 col-sm-12">
 
                 <div class="col-md-2 col-xs-2 col-sm-2">
@@ -46,9 +48,12 @@
 
             </div>
             <div class="col-md-12 col-xs-12 col-sm-12">
+                <br />
+            </div>
+            <div class="col-md-12 col-xs-12 col-sm-12">
 
                 <div class="col-md-2 col-xs-2 col-sm-2">
-                    <asp:Label ID="lblNombreProveedor" runat="server" Text="Nombre <span style='color:red'>*</span> " Font-Size="Medium" ForeColor="Black" CssClass="label"></asp:Label>
+                    <asp:Label ID="lblNombreProveedor" runat="server" Text="Nombre Completo <span style='color:red'>*</span> " Font-Size="Medium" ForeColor="Black" CssClass="label"></asp:Label>
                 </div>
                 <div class="col-md-4 col-xs-4 col-sm-4">
                     <asp:TextBox class="form-control" ID="txbNombreProveedor" runat="server"></asp:TextBox>
@@ -59,17 +64,23 @@
 
             </div>
             <div class="col-md-12 col-xs-12 col-sm-12">
+                <br />
+            </div>
+            <div class="col-md-12 col-xs-12 col-sm-12">
 
                 <div class="col-md-2 col-xs-2 col-sm-2">
-                    <asp:Label ID="lblApellidosProveedor" runat="server" Text="Apellidos <span style='color:red'>*</span> " Font-Size="Medium" ForeColor="Black" CssClass="label"></asp:Label>
+                    <asp:Label ID="lblTelefonoProveedor" runat="server" Text="Teléfono <span style='color:red'>*</span> " Font-Size="Medium" ForeColor="Black" CssClass="label"></asp:Label>
                 </div>
                 <div class="col-md-4 col-xs-4 col-sm-4">
-                    <asp:TextBox class="form-control" ID="txbApellidosProveedor" runat="server"></asp:TextBox>
+                    <asp:TextBox class="form-control" ID="txbTelefonoProveedor" runat="server"></asp:TextBox>
                 </div>
-                <div id="divApellidosProveedorIncorrecto" runat="server" style="display: none" class="col-md-6 col-xs-6 col-sm-6">
-                    <asp:Label ID="lblApellidosProveedorIncorrecto" runat="server" Font-Size="Small" class="label alert-danger" Text="Espacio Obligatorio" ForeColor="Red"></asp:Label>
+                <div id="divTelefonoProveedorIncorrecto" runat="server" style="display: none" class="col-md-6 col-xs-6 col-sm-6">
+                    <asp:Label ID="lblTelefonoProveedorIncorrecto" runat="server" Font-Size="Small" class="label alert-danger" Text="Espacio Obligatorio" ForeColor="Red"></asp:Label>
                 </div>
 
+            </div>
+            <div class="col-md-12 col-xs-12 col-sm-12">
+                <br />
             </div>
             <div class="col-md-12 col-xs-12 col-sm-12">
 
@@ -80,7 +91,7 @@
                     <asp:TextBox class="form-control" ID="txbCorreoProveedor" runat="server"></asp:TextBox>
                 </div>
                 <div id="divCorreoProveedorIncorrecto" runat="server" style="display: none" class="col-md-6 col-xs-6 col-sm-6">
-                    <asp:Label ID="lblCorreoProveedorIncorrecto" runat="server" Font-Size="Small" class="label alert-danger" Text="Espacio Obligatorio" ForeColor="Red"></asp:Label>
+                    <asp:Label ID="lblCorreoProveedorIncorrecto" runat="server" Font-Size="Small" class="label alert-danger" Text="" ForeColor="Red"></asp:Label>
                 </div>
 
             </div>
@@ -141,24 +152,32 @@
             }
 
             if (id == "txb") {
-                var apellidosProveedorIncorrecto = document.getElementById('<%= divApellidosProveedorIncorrecto.ClientID %>');
+                var telefonoProveedorIncorrecto = document.getElementById('<%= divTelefonoProveedorIncorrecto.ClientID %>');
                 if (txtBox.value != "") {
                     txtBox.className = "form-control";
 
-                    apellidosProveedorIncorrecto.style.display = 'none';
+                    telefonoProveedorIncorrecto.style.display = 'none';
                 } else {
                     txtBox.className = "form-control alert-danger";
-                    apellidosProveedorIncorrecto.style.display = 'block';
+                    telefonoProveedorIncorrecto.style.display = 'block';
                 }
             }
 
             if (id == "txbCorreoProveedor") {
                 var correoProveedorIncorrecto = document.getElementById('<%= divCorreoProveedorIncorrecto.ClientID %>');
+                var mensajeCorreo = document.getElementById('<%= lblCorreoProveedorIncorrecto.ClientID %>');
+                var validarCorreo = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/;
                 if (txtBox.value != "") {
-                    txtBox.className = "form-control";
-
-                    correoProveedorIncorrecto.style.display = 'none';
+                    if (validarCorreo.test(txtBox.value)) {
+                        txtBox.className = "form-control";
+                        correoProveedorIncorrecto.style.display = 'none';
+                    } else {
+                        mensajeCorreo.innerHTML = 'Formato de correo incorrecto.';
+                        txtBox.className = "form-control alert-danger";
+                        correoProveedorIncorrecto.style.display = 'block';
+                    }
                 } else {
+                    mensajeCorreo.innerHTML = 'Espacio Obligatorio';
                     txtBox.className = "form-control alert-danger";
                     correoProveedorIncorrecto.style.display = 'block';
                 }

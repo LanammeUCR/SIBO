@@ -71,6 +71,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ArchivoBaseDatos.txt" />
+    <Content Include="Articulo\AdministrarArticulos.aspx" />
+    <Content Include="Articulo\AgregarArticulo.aspx" />
+    <Content Include="Articulo\EditarArticulo.aspx" />
+    <Content Include="Articulo\EliminarArticulo.aspx" />
+    <Content Include="Bodega\AdministrarBodega.aspx" />
+    <Content Include="Bodega\AgregarBodega.aspx" />
+    <Content Include="Bodega\EditarBodega.aspx" />
+    <Content Include="Bodega\EliminarBodega.aspx" />
     <Content Include="Pedidos\AdministrarProveedores.aspx" />
     <Content Include="Pedidos\EditarProveedor.aspx" />
     <Content Include="Pedidos\EliminarProveedor.aspx" />
@@ -133,6 +141,7 @@
     <Content Include="Unidad\EditarUnidad.aspx" />
     <Content Include="Unidad\EliminarRecepcionista.aspx" />
     <Content Include="Unidad\EliminarUnidad.aspx" />
+    <Content Include="Unidad\RecepcionistasPorUnidad.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -181,6 +190,62 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Articulo\AdministrarArticulos.aspx.cs">
+      <DependentUpon>AdministrarArticulos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Articulo\AdministrarArticulos.aspx.designer.cs">
+      <DependentUpon>AdministrarArticulos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Articulo\AgregarArticulo.aspx.cs">
+      <DependentUpon>AgregarArticulo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Articulo\AgregarArticulo.aspx.designer.cs">
+      <DependentUpon>AgregarArticulo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Articulo\EditarArticulo.aspx.cs">
+      <DependentUpon>EditarArticulo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Articulo\EditarArticulo.aspx.designer.cs">
+      <DependentUpon>EditarArticulo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Articulo\EliminarArticulo.aspx.cs">
+      <DependentUpon>EliminarArticulo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Articulo\EliminarArticulo.aspx.designer.cs">
+      <DependentUpon>EliminarArticulo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bodega\AdministrarBodega.aspx.cs">
+      <DependentUpon>AdministrarBodega.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bodega\AdministrarBodega.aspx.designer.cs">
+      <DependentUpon>AdministrarBodega.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bodega\AgregarBodega.aspx.cs">
+      <DependentUpon>AgregarBodega.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bodega\AgregarBodega.aspx.designer.cs">
+      <DependentUpon>AgregarBodega.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bodega\EditarBodega.aspx.cs">
+      <DependentUpon>EditarBodega.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bodega\EditarBodega.aspx.designer.cs">
+      <DependentUpon>EditarBodega.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bodega\EliminarBodega.aspx.cs">
+      <DependentUpon>EliminarBodega.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bodega\EliminarBodega.aspx.designer.cs">
+      <DependentUpon>EliminarBodega.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pedidos\AdministrarProveedores.aspx.cs">
       <DependentUpon>AdministrarProveedores.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -294,6 +359,13 @@
     <Compile Include="Unidad\EliminarUnidad.aspx.designer.cs">
       <DependentUpon>EliminarUnidad.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Unidad\RecepcionistasPorUnidad.aspx.cs">
+      <DependentUpon>RecepcionistasPorUnidad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Unidad\RecepcionistasPorUnidad.aspx.designer.cs">
+      <DependentUpon>RecepcionistasPorUnidad.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Utilidades.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -310,7 +382,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Articulo\" />
+    <Folder Include="Consumo\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

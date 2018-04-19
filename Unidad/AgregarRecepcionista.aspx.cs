@@ -149,7 +149,7 @@ namespace SIBO.Unidad
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            String url = Page.ResolveUrl("~/Unidad/AdministrarRecepcionistaes.aspx");
+            String url = Page.ResolveUrl("~/Unidad/AdministrarRecepcionistas.aspx");
             Response.Redirect(url);
         }
     }

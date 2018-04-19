@@ -26,7 +26,7 @@ namespace SIBO.Unidad
             //[1]=Nuevo
             //[2]=Editar
             //[3]=Eliminar
-            Boolean[] permisos = Utilidades.permisosPorPagina(Page, "AdministrarUnidades");
+            Boolean[] permisos = Utilidades.permisosPorPagina(Page, "AdministrarRecepcionistas");
 
             if (!permisos[0])
             {

@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AgregarRecepcionista.aspx.cs" Inherits="SIBO.Unidad.AgregarRecepcionista" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -32,6 +33,9 @@
 
             </div>
             <div class="col-md-12 col-xs-12 col-sm-12">
+                <br />
+            </div>
+            <div class="col-md-12 col-xs-12 col-sm-12">
 
                 <div class="col-md-2 col-xs-2 col-sm-2">
                     <asp:Label ID="lblNombreRecepcionista" runat="server" Text="Nombre <span style='color:red'>*</span> " Font-Size="Medium" ForeColor="Black" CssClass="label"></asp:Label>
@@ -45,6 +49,9 @@
 
             </div>
             <div class="col-md-12 col-xs-12 col-sm-12">
+                <br />
+            </div>
+            <div class="col-md-12 col-xs-12 col-sm-12">
 
                 <div class="col-md-2 col-xs-2 col-sm-2">
                     <asp:Label ID="lblApellidosRecepcionista" runat="server" Text="Apellidos <span style='color:red'>*</span> " Font-Size="Medium" ForeColor="Black" CssClass="label"></asp:Label>
@@ -56,6 +63,9 @@
                     <asp:Label ID="lblApellidosRecepcionistaIncorrecto" runat="server" Font-Size="Small" class="label alert-danger" Text="Espacio Obligatorio" ForeColor="Red"></asp:Label>
                 </div>
 
+            </div>
+            <div class="col-md-12 col-xs-12 col-sm-12">
+                <br />
             </div>
             <div class="col-md-12 col-xs-12 col-sm-12">
 
@@ -126,7 +136,7 @@
                 }
             }
 
-            if (id == "txb") {
+            if (id == "txbApellidosRecepcionista") {
                 var apellidosRecepcionistaIncorrecto = document.getElementById('<%= divApellidosRecepcionistaIncorrecto.ClientID %>');
                 if (txtBox.value != "") {
                     txtBox.className = "form-control";
@@ -140,15 +150,25 @@
 
             if (id == "txbCorreoRecepcionista") {
                 var correoRecepcionistaIncorrecto = document.getElementById('<%= divCorreoRecepcionistaIncorrecto.ClientID %>');
-                 if (txtBox.value != "") {
-                     txtBox.className = "form-control";
+                var correoProveedorIncorrecto = document.getElementById('<%= divCorreoRecepcionistaIncorrecto.ClientID %>');
+                var mensajeCorreo = document.getElementById('<%= lblCorreoRecepcionista.ClientID %>');
+                var validarCorreo = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/;
+                if (txtBox.value != "") {
+                    if (validarCorreo.test(txtBox.value)) {
+                        txtBox.className = "form-control";
+                        correoProveedorIncorrecto.style.display = 'none';
+                    } else {
+                        mensajeCorreo.innerHTML = 'Formato de correo incorrecto.';
+                        txtBox.className = "form-control alert-danger";
+                        correoProveedorIncorrecto.style.display = 'block';
+                    }
+                } else {
+                    mensajeCorreo.innerHTML = 'Espacio Obligatorio';
+                    txtBox.className = "form-control alert-danger";
+                    correoProveedorIncorrecto.style.display = 'block';
+                }
+            }
 
-                     correoRecepcionistaIncorrecto.style.display = 'none';
-                 } else {
-                     txtBox.className = "form-control alert-danger";
-                     correoRecepcionistaIncorrecto.style.display = 'block';
-                 }
-             }
         }
     </script>
 </asp:Content>

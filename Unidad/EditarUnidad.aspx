@@ -31,7 +31,10 @@
                 </div>
 
             </div>
-             <div class="col-md-12 col-xs-12 col-sm-12">
+            <div class="col-md-12 col-xs-12 col-sm-12">
+                <br />
+            </div>
+            <div class="col-md-12 col-xs-12 col-sm-12">
 
                 <div class="col-md-2 col-xs-2 col-sm-2">
                     <asp:Label ID="lblTelefonoUnidad" runat="server" Text="Teléfono <span style='color:red'>*</span> " Font-Size="Medium" ForeColor="Black" CssClass="label"></asp:Label>

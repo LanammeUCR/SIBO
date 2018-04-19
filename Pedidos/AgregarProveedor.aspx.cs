@@ -1,4 +1,5 @@
-﻿using Servicios;
+﻿using Entidades;
+using Servicios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +26,7 @@ namespace SIBO.Pedidos
             //[1]=Nuevo
             //[2]=Editar
             //[3]=Eliminar
-            Boolean[] permisos = Utilidades.permisosPorPagina(Page, "AdministrarRecepcionistaes");
+            Boolean[] permisos = Utilidades.permisosPorPagina(Page, "AdministrarProveedores");
 
             if (!permisos[1])
             {
@@ -36,10 +37,12 @@ namespace SIBO.Pedidos
             if (!Page.IsPostBack)
             {
 
-                txbCedulaRecepcionista.Attributes.Add("oninput", "validarTexto(this)");
-                txbNombreRecepcionista.Attributes.Add("oninput", "validarTexto(this)");
-                txbApellidosRecepcionista.Attributes.Add("oninput", "validarTexto(this)");
-                txbCorreoRecepcionista.Attributes.Add("oninput", "validarTexto(this)");
+                txbCedulaProveedor.Attributes.Add("oninput", "validarTexto(this)");
+                txbNombreProveedor.Attributes.Add("oninput", "validarTexto(this)");
+                txbTelefonoProveedor.Attributes.Add("oninput", "validarTexto(this)");
+                txbCorreoProveedor.Attributes.Add("oninput", "validarTexto(this)");
+                
+                cargaTipoCedula();
             }
         }
         #region logica
@@ -57,59 +60,59 @@ namespace SIBO.Pedidos
         public Boolean validarCampos()
         {
             Boolean validados = true;
-            divCedulaRecepcionistaIncorrecto.Style.Add("display", "none");
-            divNombreRecepcionistaIncorrecto.Style.Add("display", "none");
-            divApellidosRecepcionistaIncorrecto.Style.Add("display", "none");
-            divCorreoRecepcionistaIncorrecto.Style.Add("display", "none");
+            divCedulaProveedorIncorrecto.Style.Add("display", "none");
+            divNombreProveedorIncorrecto.Style.Add("display", "none");
+            divTelefonoProveedorIncorrecto.Style.Add("display", "none");
+            divCorreoProveedorIncorrecto.Style.Add("display", "none");
 
-            txbCedulaRecepcionista.CssClass = "form-control";
-            txbNombreRecepcionista.CssClass = "form-control";
-            txbApellidosRecepcionista.CssClass = "form-control";
-            txbCorreoRecepcionista.CssClass = "form-control";
+            txbCedulaProveedor.CssClass = "form-control";
+            txbNombreProveedor.CssClass = "form-control";
+            txbTelefonoProveedor.CssClass = "form-control";
+            txbCorreoProveedor.CssClass = "form-control";
 
-            #region validacion cedula Recepcionista
-            String cedulaRecepcionista = txbCedulaRecepcionista.Text;
+            #region validacion cedula Proveedor
+            String cedulaProveedor = txbCedulaProveedor.Text;
 
-            if (cedulaRecepcionista.Trim() == "")
+            if (cedulaProveedor.Trim() == "")
             {
-                txbCedulaRecepcionista.CssClass = "form-control alert-danger";
-                divCedulaRecepcionistaIncorrecto.Style.Add("display", "block");
+                txbCedulaProveedor.CssClass = "form-control alert-danger";
+                divCedulaProveedorIncorrecto.Style.Add("display", "block");
 
                 validados = false;
             }
             #endregion
 
-            #region validacion nombre Recepcionista
-            String nombreRecepcionista = txbNombreRecepcionista.Text;
+            #region validacion nombre Proveedor
+            String nombreProveedor = txbNombreProveedor.Text;
 
-            if (nombreRecepcionista.Trim() == "")
+            if (nombreProveedor.Trim() == "")
             {
-                txbNombreRecepcionista.CssClass = "form-control alert-danger";
-                divNombreRecepcionistaIncorrecto.Style.Add("display", "block");
+                txbNombreProveedor.CssClass = "form-control alert-danger";
+                divNombreProveedorIncorrecto.Style.Add("display", "block");
 
                 validados = false;
             }
             #endregion
 
-            #region validacion apellidos Recepcionista
-            String apellidosRecepcionista = txbApellidosRecepcionista.Text;
+            #region validacion apellidos Proveedor
+            String telefonoProveedor = txbTelefonoProveedor.Text;
 
-            if (apellidosRecepcionista.Trim() == "")
+            if (telefonoProveedor.Trim() == "")
             {
-                txbApellidosRecepcionista.CssClass = "form-control alert-danger";
-                divApellidosRecepcionistaIncorrecto.Style.Add("display", "block");
+                txbTelefonoProveedor.CssClass = "form-control alert-danger";
+                divTelefonoProveedorIncorrecto.Style.Add("display", "block");
 
                 validados = false;
             }
             #endregion
 
-            #region validacion correo Recepcionista
-            String correoRecepcionista = txbCorreoRecepcionista.Text;
+            #region validacion correo Proveedor
+            String correoProveedor = txbCorreoProveedor.Text;
 
-            if (correoRecepcionista.Trim() == "")
+            if (correoProveedor.Trim() == "")
             {
-                txbCorreoRecepcionista.CssClass = "form-control alert-danger";
-                divCorreoRecepcionistaIncorrecto.Style.Add("display", "block");
+                txbCorreoProveedor.CssClass = "form-control alert-danger";
+                divCorreoProveedorIncorrecto.Style.Add("display", "block");
 
                 validados = false;
             }
@@ -119,11 +122,25 @@ namespace SIBO.Pedidos
         }
         #endregion
 
+        private void cargaTipoCedula() 
+        {
+            ListItem personaFisica = new ListItem("Cédula persona física", "1");
+            ListItem personaJuridica = new ListItem("Cédula persona jurídica", "2");
+            ListItem nite = new ListItem("Número de Identificación Tributario Especial (NITE)", "3");
+            ListItem dimex = new ListItem("Documento de Identificación Migratorio para Extranjeros (DIMEX)", "4");
+            // Lo agrega a la colección de Items del DropDownList
+            ddlTipoCedula.Items.Add(personaFisica);
+            ddlTipoCedula.Items.Add(personaJuridica);
+            ddlTipoCedula.Items.Add(nite);
+            ddlTipoCedula.Items.Add(dimex);
+
+        }
+
         /// <summary>
         /// Fabián Quirós Masís
         /// 09/04/2018
-        /// Efecto: Verifica que los datos de una Recepcionista esten completos y los guarda en la base de datos
-        /// redirecciona a la pantalla de Administrar Recepcionistaes
+        /// Efecto: Verifica que los datos de una Proveedor esten completos y los guarda en la base de datos
+        /// redirecciona a la pantalla de Administrar Proveedores
         /// Requiere:-
         /// Modifica:-
         /// Devuelve:-
@@ -133,22 +150,23 @@ namespace SIBO.Pedidos
         {
             if (validarCampos())
             {
-                PersonaRecepcionista recepcionista = new Entidades.PersonaRecepcionista();
-                recepcionista.cedula = txbCedulaRecepcionista.Text;
-                recepcionista.nombre = txbNombreRecepcionista.Text;
-                recepcionista.apellidos = txbApellidosRecepcionista.Text;
-                recepcionista.correo = txbCorreoRecepcionista.Text;
+                Proveedor proveedor = new Entidades.Proveedor();
+                proveedor.cedula = txbCedulaProveedor.Text;
+                proveedor.tipoCedula = Convert.ToInt32(ddlTipoCedula.SelectedItem.Value);
+                proveedor.nombre = txbNombreProveedor.Text;
+                proveedor.telefono = txbTelefonoProveedor.Text;
+                proveedor.correo = txbCorreoProveedor.Text;
 
-                recepcionistaServicios.insertarRecepcionista(recepcionista);
+                proveedorServicios.insertarProveedor(proveedor);
 
-                String url = Page.ResolveUrl("~/Unidad/AdministrarRecepcionistas.aspx");
+                String url = Page.ResolveUrl("~/Pedidos/AdministrarProveedores.aspx");
                 Response.Redirect(url);
             }
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            String url = Page.ResolveUrl("~/Unidad/AdministrarRecepcionistaes.aspx");
+            String url = Page.ResolveUrl("~/Pedidos/AdministrarProveedores.aspx");
             Response.Redirect(url);
         }
     }

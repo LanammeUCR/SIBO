@@ -29,7 +29,7 @@ namespace SIBO.Unidad
             //[3]=Eliminar
             Boolean[] permisos = Utilidades.permisosPorPagina(Page, "AdministrarRecepcionistaes");
 
-            if (!permisos[1])
+            if (!permisos[2])
             {
                 String url = Page.ResolveUrl("~/Default.aspx");
                 Response.Redirect(url);
@@ -155,7 +155,7 @@ namespace SIBO.Unidad
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            String url = Page.ResolveUrl("~/Unidad/AdministrarRecepcionistaes.aspx");
+            String url = Page.ResolveUrl("~/Unidad/AdministrarRecepcionistas.aspx");
             Response.Redirect(url);
         }
     }

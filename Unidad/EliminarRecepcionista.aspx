@@ -1,10 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EliminarRecepcionista.aspx.cs" Inherits="SIBO.Unidad.EliminarRecepcionista" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <div class="divRedondo">
         <div class="row">
-           
+
             <%-- titulo accion--%>
             <div class="col-md-12 col-xs-12 col-sm-12">
                 <center>
@@ -17,7 +18,7 @@
                 <hr />
             </div>
 
-             <%-- campos a llenar --%>
+            <%-- campos a llenar --%>
             <div class="col-md-12 col-xs-12 col-sm-12">
 
                 <div class="col-md-2 col-xs-2 col-sm-2">
@@ -26,7 +27,10 @@
                 <div class="col-md-4 col-xs-4 col-sm-4">
                     <asp:TextBox class="form-control" ID="txbCedulaRecepcionista" runat="server" ReadOnly="True"></asp:TextBox>
                 </div>
-               
+
+            </div>
+            <div class="col-md-12 col-xs-12 col-sm-12">
+                <br />
             </div>
             <div class="col-md-12 col-xs-12 col-sm-12">
 
@@ -35,8 +39,11 @@
                 </div>
                 <div class="col-md-4 col-xs-4 col-sm-4">
                     <asp:TextBox class="form-control" ID="txbNombreRecepcionista" runat="server" ReadOnly="True"></asp:TextBox>
-                </div>              
+                </div>
 
+            </div>
+            <div class="col-md-12 col-xs-12 col-sm-12">
+                <br />
             </div>
             <div class="col-md-12 col-xs-12 col-sm-12">
 
@@ -45,8 +52,11 @@
                 </div>
                 <div class="col-md-4 col-xs-4 col-sm-4">
                     <asp:TextBox class="form-control" ID="txbApellidosRecepcionista" runat="server" ReadOnly="True"></asp:TextBox>
-                </div>              
+                </div>
 
+            </div>
+            <div class="col-md-12 col-xs-12 col-sm-12">
+                <br />
             </div>
             <div class="col-md-12 col-xs-12 col-sm-12">
 
@@ -56,7 +66,7 @@
                 <div class="col-md-4 col-xs-4 col-sm-4">
                     <asp:TextBox class="form-control" ID="txbCorreoRecepcionista" runat="server" ReadOnly="True"></asp:TextBox>
                 </div>
-               
+
             </div>
 
             <div class="col-xs-12">

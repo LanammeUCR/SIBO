@@ -28,7 +28,7 @@ namespace SIBO.Unidad
             //[3]=Eliminar
             Boolean[] permisos = Utilidades.permisosPorPagina(Page, "AdministrarUnidades");
 
-            if (!permisos[2])
+            if (!permisos[3])
             {
                 String url = Page.ResolveUrl("~/Default.aspx");
                 Response.Redirect(url);
@@ -36,7 +36,7 @@ namespace SIBO.Unidad
 
             if (!Page.IsPostBack)
             {
-                Entidades.Unidad unidad = (Entidades.Unidad)Session["unidadEditar"];
+                Entidades.Unidad unidad = (Entidades.Unidad)Session["unidadEliminar"];
                 txtNombreUnidad.Text = unidad.nombre;
                 txtNombreUnidad.Attributes.Add("oninput", "validarTexto(this)");
                 txbTelefonoUnidad.Text = unidad.telefono;
@@ -57,8 +57,8 @@ namespace SIBO.Unidad
         /// <returns>-</returns>
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            
-                Entidades.Unidad unidad = (Entidades.Unidad)Session["unidadEditar"];
+
+            Entidades.Unidad unidad = (Entidades.Unidad)Session["unidadEliminar"];
                 unidad.nombre = txtNombreUnidad.Text;
                 unidad.telefono = txbTelefonoUnidad.Text;
                

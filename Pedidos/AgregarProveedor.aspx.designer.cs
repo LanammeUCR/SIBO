@@ -130,40 +130,40 @@ namespace SIBO.Pedidos {
         protected global::System.Web.UI.WebControls.Label lblNombreProveedorIncorrecto;
         
         /// <summary>
-        /// Control lblApellidosProveedor.
+        /// Control lblTelefonoProveedor.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblApellidosProveedor;
+        protected global::System.Web.UI.WebControls.Label lblTelefonoProveedor;
         
         /// <summary>
-        /// Control txbApellidosProveedor.
+        /// Control txbTelefonoProveedor.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbApellidosProveedor;
+        protected global::System.Web.UI.WebControls.TextBox txbTelefonoProveedor;
         
         /// <summary>
-        /// Control divApellidosProveedorIncorrecto.
+        /// Control divTelefonoProveedorIncorrecto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divApellidosProveedorIncorrecto;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divTelefonoProveedorIncorrecto;
         
         /// <summary>
-        /// Control lblApellidosProveedorIncorrecto.
+        /// Control lblTelefonoProveedorIncorrecto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblApellidosProveedorIncorrecto;
+        protected global::System.Web.UI.WebControls.Label lblTelefonoProveedorIncorrecto;
         
         /// <summary>
         /// Control lblCorreoProveedor.

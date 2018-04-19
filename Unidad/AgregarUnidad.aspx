@@ -1,8 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AgregarUnidad.aspx.cs" Inherits="SIBO.AgregarUnidad" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-<div class="divRedondo">
+    <div class="divRedondo">
         <div class="row">
 
             <%-- titulo accion--%>
@@ -31,8 +32,10 @@
                 </div>
 
             </div>
-            <br/>
-             <div class="col-md-12 col-xs-12 col-sm-12">
+            <div class="col-md-12 col-xs-12 col-sm-12">
+                <br />
+            </div>
+            <div class="col-md-12 col-xs-12 col-sm-12">
 
                 <div class="col-md-2 col-xs-2 col-sm-2">
                     <asp:Label ID="lblTelefonoUnidad" runat="server" Text="Teléfono <span style='color:red'>*</span> " Font-Size="Medium" ForeColor="Black" CssClass="label"></asp:Label>

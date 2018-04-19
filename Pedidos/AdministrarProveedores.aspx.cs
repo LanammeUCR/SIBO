@@ -45,7 +45,7 @@ namespace SIBO.Pedidos
             {
                 Session["listaProveedores"] = null;
                 Session["proveedorEditar"] = null;
-                Session["proveedorEditar"] = null;
+                Session["proveedorEliminar"] = null;
 
 
                 cargarDatosTblProveedor();
