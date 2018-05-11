@@ -83,8 +83,6 @@
     <Content Include="Pedidos\EditarProveedor.aspx" />
     <Content Include="Pedidos\EliminarProveedor.aspx" />
     <Content Include="Unidad\AdministrarUnidades.aspx" />
-    <Content Include="Unidad\AdministrarRecepcionistas.aspx" />
-    <Content Include="Unidad\AgregarRecepcionista.aspx" />
     <Content Include="Unidad\AgregarUnidad.aspx" />
     <Content Include="Configuracion\Configuracion.aspx" />
     <Content Include="Content\DataTables\datatables.min.css" />
@@ -137,11 +135,9 @@
     <Content Include="Scripts\npm.js" />
     <Content Include="Scripts\pdf.js" />
     <Content Include="Scripts\transition.js" />
-    <Content Include="Unidad\EditarRecepcionista.aspx" />
     <Content Include="Unidad\EditarUnidad.aspx" />
-    <Content Include="Unidad\EliminarRecepcionista.aspx" />
     <Content Include="Unidad\EliminarUnidad.aspx" />
-    <Content Include="Unidad\RecepcionistasPorUnidad.aspx" />
+    <Content Include="Unidad\FuncionariosPorUnidad.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -274,20 +270,6 @@
     <Compile Include="Unidad\AdministrarUnidades.aspx.designer.cs">
       <DependentUpon>AdministrarUnidades.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Unidad\AdministrarRecepcionistas.aspx.cs">
-      <DependentUpon>AdministrarRecepcionistas.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Unidad\AdministrarRecepcionistas.aspx.designer.cs">
-      <DependentUpon>AdministrarRecepcionistas.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Unidad\AgregarRecepcionista.aspx.cs">
-      <DependentUpon>AgregarRecepcionista.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Unidad\AgregarRecepcionista.aspx.designer.cs">
-      <DependentUpon>AgregarRecepcionista.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Unidad\AgregarUnidad.aspx.cs">
       <DependentUpon>AgregarUnidad.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -331,26 +313,12 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
-    <Compile Include="Unidad\EditarRecepcionista.aspx.cs">
-      <DependentUpon>EditarRecepcionista.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Unidad\EditarRecepcionista.aspx.designer.cs">
-      <DependentUpon>EditarRecepcionista.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Unidad\EditarUnidad.aspx.cs">
       <DependentUpon>EditarUnidad.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Unidad\EditarUnidad.aspx.designer.cs">
       <DependentUpon>EditarUnidad.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Unidad\EliminarRecepcionista.aspx.cs">
-      <DependentUpon>EliminarRecepcionista.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Unidad\EliminarRecepcionista.aspx.designer.cs">
-      <DependentUpon>EliminarRecepcionista.aspx</DependentUpon>
     </Compile>
     <Compile Include="Unidad\EliminarUnidad.aspx.cs">
       <DependentUpon>EliminarUnidad.aspx</DependentUpon>
@@ -359,12 +327,12 @@
     <Compile Include="Unidad\EliminarUnidad.aspx.designer.cs">
       <DependentUpon>EliminarUnidad.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Unidad\RecepcionistasPorUnidad.aspx.cs">
-      <DependentUpon>RecepcionistasPorUnidad.aspx</DependentUpon>
+    <Compile Include="Unidad\FuncionariosPorUnidad.aspx.cs">
+      <DependentUpon>FuncionariosPorUnidad.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Unidad\RecepcionistasPorUnidad.aspx.designer.cs">
-      <DependentUpon>RecepcionistasPorUnidad.aspx</DependentUpon>
+    <Compile Include="Unidad\FuncionariosPorUnidad.aspx.designer.cs">
+      <DependentUpon>FuncionariosPorUnidad.aspx</DependentUpon>
     </Compile>
     <Compile Include="Utilidades.cs" />
   </ItemGroup>

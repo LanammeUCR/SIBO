@@ -1754,6 +1754,9 @@ pre code {
 }
 .col-xs-offset-10 {
   margin-left: 83.33333333%;
+    top: 0px;
+    left: 0px;
+    height: 63px;
 }
 .col-xs-offset-9 {
   margin-left: 75%;
@@ -3969,6 +3972,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .input-group-btn,
 .input-group .form-control {
   display: table-cell;
+    top: 0px;
+    left: 0px;
 }
 .input-group-addon:not(:first-child):not(:last-child),
 .input-group-btn:not(:first-child):not(:last-child),

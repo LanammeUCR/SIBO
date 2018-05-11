@@ -10,97 +10,124 @@
 namespace SIBO.Unidad {
     
     
-    public partial class EliminarRecepcionista {
+    public partial class RecepcionistasPorUnidad {
         
         /// <summary>
-        /// Control lblEliminarRecepcionista.
+        /// Control ViewContactos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEliminarRecepcionista;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ViewContactos;
         
         /// <summary>
-        /// Control lbCedulaRecepcionista.
+        /// Control hdIdContacto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbCedulaRecepcionista;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hdIdContacto;
         
         /// <summary>
-        /// Control txbCedulaRecepcionista.
+        /// Control lbltitulo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbCedulaRecepcionista;
+        protected global::System.Web.UI.WebControls.Label lbltitulo;
         
         /// <summary>
-        /// Control lblNombreRecepcionista.
+        /// Control lblNombreUnidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNombreRecepcionista;
+        protected global::System.Web.UI.WebControls.Label lblNombreUnidad;
         
         /// <summary>
-        /// Control txbNombreRecepcionista.
+        /// Control lblContactos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbNombreRecepcionista;
+        protected global::System.Web.UI.WebControls.Label lblContactos;
         
         /// <summary>
-        /// Control lblApellidosRecepcionista.
+        /// Control lblContactosAsociados.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblApellidosRecepcionista;
+        protected global::System.Web.UI.WebControls.Label lblContactosAsociados;
         
         /// <summary>
-        /// Control txbApellidosRecepcionista.
+        /// Control txtBuscarFuncionariosAsociados.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbApellidosRecepcionista;
+        protected global::System.Web.UI.WebControls.TextBox txtBuscarFuncionariosAsociados;
         
         /// <summary>
-        /// Control lblCorreoRecepcionista.
+        /// Control txtBuscarFuncionarios.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCorreoRecepcionista;
+        protected global::System.Web.UI.WebControls.TextBox txtBuscarFuncionarios;
         
         /// <summary>
-        /// Control txbCorreoRecepcionista.
+        /// Control LbFuncionariosAsociados.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbCorreoRecepcionista;
+        protected global::System.Web.UI.WebControls.ListBox LbFuncionariosAsociados;
         
         /// <summary>
-        /// Control btnEliminar.
+        /// Control btnPasarDerecha.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEliminar;
+        protected global::System.Web.UI.WebControls.LinkButton btnPasarDerecha;
+        
+        /// <summary>
+        /// Control btnPasarIzquierda.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnPasarIzquierda;
+        
+        /// <summary>
+        /// Control LbFuncionarios.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox LbFuncionarios;
+        
+        /// <summary>
+        /// Control btnGuardar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnGuardar;
         
         /// <summary>
         /// Control btnCancelar.

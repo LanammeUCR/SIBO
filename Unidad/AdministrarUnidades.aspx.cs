@@ -168,7 +168,7 @@ namespace SIBO.Unidad
 
             Session["unidadAsociar"] = unidadEliminar;
 
-            String url = Page.ResolveUrl("~/Unidad/RecepcionistasPorUnidad.aspx");
+            String url = Page.ResolveUrl("~/Unidad/FuncionariosPorUnidad.aspx");
             Response.Redirect(url);
 
         }

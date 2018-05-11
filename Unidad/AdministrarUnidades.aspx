@@ -44,7 +44,7 @@
                                 <%# Eval("telefono") %>
                             </td>  
                             <td>
-                                 <asp:LinkButton ID="LinkButton1" runat="server" ToolTip="Recepcionistas" OnClick="btnAsociarRecepcionistas_Click" CommandArgument='<%# Eval("idUnidad") %>'>Recepcionistas</span></asp:LinkButton>                           
+                                 <asp:LinkButton ID="LinkButton1" runat="server" ToolTip="Funcionarios" OnClick="btnAsociarRecepcionistas_Click" CommandArgument='<%# Eval("idUnidad") %>'>Funcionarios</span></asp:LinkButton>                           
                             </td>                         
                         </tr>
 
