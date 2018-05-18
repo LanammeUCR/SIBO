@@ -132,7 +132,7 @@ namespace SIBO.Unidad
             Session["listaFuncionariosAsociadosTemp"] = listaFuncionariosAsociados;
             Session["listaFuncionariosDesasociarTemp"] = listaFuncionariosDesasociarTemp;
 
-            LbFuncionarios.DataSource = funcionarioServicios.getFuncionarios();
+            LbFuncionarios.DataSource = funcionarioServicios.getFuncionariosFueraUnidad(unidad);
             LbFuncionarios.DataTextField = "nombre";
             LbFuncionarios.DataValueField = "idFuncionario";
             LbFuncionarios.DataBind();
@@ -261,9 +261,20 @@ namespace SIBO.Unidad
         protected void txtBuscarFuncionarios_TextChanged(object sender, EventArgs e)
         {
             ListItemCollection listaFuncionarios = LbFuncionarios.Items;
+            ListItemCollection listaFiltrada = new ListItemCollection();
             String busqueda = txtBuscarFuncionarios.Text;
 
+            foreach (ListItem item in listaFuncionarios){
+                String nombreFuncionario = item.Text;
+                if (nombreFuncionario.ToLower().Contains(busqueda.ToLower()))
+                {
+                    listaFiltrada.Add(item);
+                }            
+            }
+
+            listaFuncionarios = listaFiltrada;
             
+           
         }
 
     }

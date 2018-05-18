@@ -9,7 +9,7 @@
             <div class="row">
                   <%-- variables hidden --%><input type="hidden" id="hdIdContacto" runat="server" /><%-- fin variables hidden --%><%-- titulo accion--%><div class="col-md-12 col-xs-12 col-sm-12">
                     <center>
-                        <asp:Label ID="lbltitulo" runat="server" Text="Asociar Recepcionistas" Font-Size="Large" ForeColor="Black" ></asp:Label>
+                        <asp:Label ID="lbltitulo" runat="server" Text="Asociar Funcionarios" Font-Size="Large" ForeColor="Black" ></asp:Label>
                        </center>
                 </div>
                 <%-- fin titulo accion --%>
@@ -18,7 +18,7 @@
                 </div>
                             
                 <div class="col-md-2 col-xs-2 col-sm-2 col-md-offset-10 col-xs-offset-10 col-sm-offset-10">                   
-                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal" onclick="limpiarDatos()">Nuevo Contacto</button>
+                    
                 </div>
 
                 <!-- contactos en la base de datos -->

@@ -75,6 +75,7 @@
     <Content Include="Articulo\AgregarArticulo.aspx" />
     <Content Include="Articulo\EditarArticulo.aspx" />
     <Content Include="Articulo\EliminarArticulo.aspx" />
+    <Content Include="Articulo\SolicitudesArticulos.aspx" />
     <Content Include="Bodega\AdministrarBodega.aspx" />
     <Content Include="Bodega\AgregarBodega.aspx" />
     <Content Include="Bodega\EditarBodega.aspx" />
@@ -213,6 +214,13 @@
     </Compile>
     <Compile Include="Articulo\EliminarArticulo.aspx.designer.cs">
       <DependentUpon>EliminarArticulo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Articulo\SolicitudesArticulos.aspx.cs">
+      <DependentUpon>SolicitudesArticulos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Articulo\SolicitudesArticulos.aspx.designer.cs">
+      <DependentUpon>SolicitudesArticulos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Bodega\AdministrarBodega.aspx.cs">
       <DependentUpon>AdministrarBodega.aspx</DependentUpon>
