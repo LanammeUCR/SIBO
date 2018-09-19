@@ -21,28 +21,13 @@ namespace SIBO.Bodega
             int[] rolesPermitidos = { 2 };
             Utilidades.escogerMenu(Page, rolesPermitidos);
 
-            //devuelve los permisos de la pantalla en el siguiente orden:
-            //[0]=ver
-            //[1]=Nuevo
-            //[2]=Eliminar
-            //[3]=Eliminar
-            Boolean[] permisos = Utilidades.permisosPorPagina(Page, "AdministrarBodegaes");
-
-            if (!permisos[1])
-            {
-                String url = Page.ResolveUrl("~/Default.aspx");
-                Response.Redirect(url);
-            }
-
             if (!Page.IsPostBack)
             {
                 Entidades.Bodega bodegaEliminar = (Entidades.Bodega)Session["bodegaEliminar"];
                 txtNombreBodega.Text = bodegaEliminar.nombre;
                 txtNombreBodega.Attributes.Add("oninput", "validarTexto(this)");
                 txbDireccionBodega.Text = bodegaEliminar.direccion;
-                txbDireccionBodega.Attributes.Add("oninput", "validarTexto(this)");
-                txbTelefonoBodega.Text = bodegaEliminar.telefono;
-                txbTelefonoBodega.Attributes.Add("oninput", "validarTexto(this)");
+                txbDireccionBodega.Attributes.Add("oninput", "validarTexto(this)");                          
             }
         }
         #region logica
@@ -69,18 +54,27 @@ namespace SIBO.Bodega
         /// Devuelve:-
         /// </summary>
         /// <returns>-</returns>
-        protected void btnEliminar_Click(object sender, EventArgs e)
+        protected void btnnar_Click(object sender, EventArgs e)
         {
-            
-                Entidades.Bodega bodegaEliminar = (Entidades.Bodega)Session["bodegaEliminar"];               
 
-                bodegaServicios.eliminarBodega(bodegaEliminar,(String)Session["nombreCompleto"]);
+            Entidades.Bodega bodeganar = (Entidades.Bodega)Session["bodegaEliminar"];               
+
+                bodegaServicios.eliminarBodega(bodeganar,(String)Session["nombreCompleto"]);
 
                 String url = Page.ResolveUrl("~/Bodega/AdministrarBodega.aspx");
                 Response.Redirect(url);
            
         }
 
+        /// <summary>
+        /// Fabián Quirós Masís
+        /// 09/04/2018
+        /// Efecto: Redirecciona a la pantalla de Administrar Bodegas
+        /// Requiere:-
+        /// Modifica:-
+        /// Devuelve:-
+        /// </summary>
+        /// <returns>-</returns>
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
             String url = Page.ResolveUrl("~/Bodega/AdministrarBodega.aspx");

@@ -1,0 +1,72 @@
+﻿using Servicios;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace SIBO.Unidad
+{
+    public partial class EliminarUnidad : System.Web.UI.Page
+    {
+        #region variables globales
+        UnidadServicios unidadServicios = new UnidadServicios();
+
+        #endregion
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            //controla los menus q se muestran y las pantallas que se muestras segun el rol que tiene el usuario
+            //si no tiene permiso de ver la pagina se redirecciona a login
+            int[] rolesPermitidos = { 2 };
+            Utilidades.escogerMenu(Page, rolesPermitidos);         
+
+            if (!Page.IsPostBack)
+            {
+                Entidades.Recepcion unidad = (Entidades.Recepcion)Session["recepcionEliminar"];
+                txtNombreUnidad.Text = unidad.nombre;
+                txtNombreUnidad.Attributes.Add("oninput", "validarTexto(this)");                
+            }
+        }
+
+        #region eventos
+        /// <summary>
+        /// Fabián Quirós Masís
+        /// 09/04/2018
+        /// Efecto: Verifica que los datos de una Unidad esten completos y los guarda en la base de datos
+        /// redirecciona a la pantalla de Administrar Unidades
+        /// Requiere:-
+        /// Modifica:-
+        /// Devuelve:-
+        /// </summary>
+        /// <returns>-</returns>
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+            Entidades.Recepcion unidad = (Entidades.Recepcion)Session["recepcionEliminar"];
+            unidad.nombre = txtNombreUnidad.Text;              
+               
+            unidadServicios.eliminarUnidad(unidad, (String)Session["nombreCompleto"]);
+
+            String url = Page.ResolveUrl("~/Recepcion/AdministrarRecepcion.aspx");
+            Response.Redirect(url);
+            
+        }
+
+        /// <summary>
+        /// Fabián Quirós Masís
+        /// 09/04/2018
+        /// Efecto: redirreciona a la pagina adminitrar unidades
+        /// Requiere:-
+        /// Modifica:-
+        /// Devuelve:-
+        /// </summary>
+        /// <returns>-</returns>
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            String url = Page.ResolveUrl("~/Recepcion/AdministrarRecepcion.aspx");
+            Response.Redirect(url);
+        }
+     #endregion
+    }
+}

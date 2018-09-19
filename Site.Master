@@ -22,7 +22,9 @@
     <!--Dialogos de Mensaje ref:https://nakupanda.github.io/bootstrap3-dialog/#available-options -->
     <link href="css/bootstrap-dialog.css" rel="stylesheet" />
 
-    <script src='<%=Page.ResolveUrl("~/Scripts/jquery-1.9.1.js") %>'></script>
+    <%--<script src='<%=Page.ResolveUrl("~/Scripts/jquery-1.9.1.js") %>'></script>--%>
+    <script src='<%=Page.ResolveUrl("~/Scripts/jquery-1.12.4.js") %>'></script>
+    <script src='<%=Page.ResolveUrl("~/Scripts/jquery-ui.js") %>'></script>
     <!-- Table -->
     <link href="Content/DataTables/datatables.min.css" rel="stylesheet" />
     <script src='<%=Page.ResolveUrl("~/Scripts/datatables.min.js") %>'></script>
@@ -91,30 +93,61 @@
                                 <ul class="nav navbar-nav">
                                     <li class="dropdown">
                                         <%-----------------------PESTAÑAS-----------------------%>
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Configuración<span class="caret"></span></a>
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Catalogos<span class="caret"></span></a>
                                         <ul class="dropdown-menu" role="menu">
                                             <li><a href='<%=Page.ResolveUrl("~/Articulo/AdministrarArticulos.aspx") %>'>Articulos</a></li>                                            
                                             <li><a href='<%=Page.ResolveUrl("~/Bodega/AdministrarBodega.aspx") %>'>Bodegas</a></li>
-                                            <li><a href='<%=Page.ResolveUrl("~/Pedidos/AdministrarProveedores.aspx") %>'>Proveedores</a></li>
-                                            <li><a href='<%=Page.ResolveUrl("~/Unidad/AdministrarUnidades.aspx") %>'>Unidades</a></li>                                                                                         
+                                            <li><a href='<%=Page.ResolveUrl("~/Proveedores/AdministrarProveedores.aspx") %>'>Proveedores</a></li>
+                                            <li><a href='<%=Page.ResolveUrl("~/Recepcion/AdministrarRecepcion.aspx") %>'>Recepciones</a></li>                                                                                         
                                         </ul>
-                                    </li>                                   
+                                    </li>  
+                                     <li class="dropdown" aria-expanded="true">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Inventario<span class="caret"></span></a>
+                                        <ul class="dropdown-menu" role="menu">                                                                                      
+                                            <li><a href='<%=Page.ResolveUrl("~/Inventario/ArticulosUbicaciones.aspx") %>'>Inventario Articulo</a></li>                                            
+                                        </ul>
+                                    </li>                                 
                                     <li class="dropdown" aria-expanded="true">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Articulos<span class="caret"></span></a>
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Solicitudes<span class="caret"></span></a>
+                                        <ul class="dropdown-menu" role="menu">                                                                                      
+                                            <li><a href='<%=Page.ResolveUrl("~/SolicitudesConsumo/AdministrarSolicitudesConsumo.aspx") %>'>Solicitudes</a></li>   
+                                        </ul>
+                                    </li>
+                                     <li class="dropdown" aria-expanded="true">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Ingresos de Articulos<span class="caret"></span></a>
                                         <ul class="dropdown-menu" role="menu">                                          
-                                            <li><a href='<%=Page.ResolveUrl("~/Articulo/SolicitudesArticulos.aspx") %>'>Solicitudes de Articulos</a></li>
+                                            <li><a href='<%=Page.ResolveUrl("~/PedidosProveedor/AdministrarSolicitudesProveedor.aspx") %>'>Ingreso</a></li>                                          
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="Default.aspx">Informes</a>
+                                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Informes<span class="caret"></span></a>
+                                        <ul class="dropdown-menu" role="menu">                                                                                      
+                                            <li><a href='<%=Page.ResolveUrl("~/Informes/ReporteExistencias.aspx") %>'>Informe Existencias</a></li>   
+                                            <li><a href='<%=Page.ResolveUrl("~/Informes/Reporte.aspx") %>'>Articulo más Solicitado</a></li>                                            
+                                        </ul>
                                     </li>
                                     <li>
-                                        <a href='<%=Page.ResolveUrl("~/Default.aspx") %>'>Ayuda</a>
+                                        <a href='<%=Page.ResolveUrl("~/Default.aspx") %>'>Ayuda</a>                                        
                                     </li>
                                 </ul>
                             </div>
-                            <%------------------------------FIN DE LOS MENUS ---------------------------%>
+                            <%------------------------------FIN DE LOS MENU ADMINISTRADOR ---------------------------%>
 
+                               <%------------------------------MENU DE USUARIO--------------------------%>
+                            <div id="MenuUsuario" runat="server">
+                                <ul class="nav navbar-nav">                                                       
+                                   <%-- <li class="dropdown" aria-expanded="true">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Solicitudes<span class="caret"></span></a>
+                                        <ul class="dropdown-menu" role="menu">                                                                                                                              
+                                            <li><a href='<%=Page.ResolveUrl("~/SolicitudesConsumo/AdministrarSolicitudesFuncionario.aspx") %>'>Solicitudes Funcionario</a></li>                                            
+                                        </ul>
+                                    </li> --%>                                   
+                                   <%-- <li>
+                                        <a href='<%=Page.ResolveUrl("~/Default.aspx") %>'>Ayuda</a>                                        
+                                    </li>--%>
+                                </ul>
+                            </div>
+                            <%------------------------------FIN DE LOS MENU USUARIO ---------------------------%>
                             <ul class="nav navbar-nav navbar-right">
                                 <li>
                                     <a id="username" class="hidden-sm hidden-xs" runat="server">Bienvenid@</a>

@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace SIBO.Articulo
 {
-    public partial class EliminarArticulo : System.Web.UI.Page
+    public partial class narArticulo : System.Web.UI.Page
     {
         #region variables globales
         ArticuloServicios recepcionistaServicios = new ArticuloServicios();
@@ -21,33 +21,20 @@ namespace SIBO.Articulo
             int[] rolesPermitidos = { 2 };
             Utilidades.escogerMenu(Page, rolesPermitidos);
 
-            //devuelve los permisos de la pantalla en el siguiente orden:
-            //[0]=ver
-            //[1]=Nuevo
-            //[2]=Editar
-            //[3]=Eliminar
-            Boolean[] permisos = Utilidades.permisosPorPagina(Page, "AdministrarArticuloes");
-
-            if (!permisos[2])
-            {
-                String url = Page.ResolveUrl("~/Default.aspx");
-                Response.Redirect(url);
-            }
-
             if (!Page.IsPostBack)
             {
 
-                Entidades.Articulo articuloEliminar = (Entidades.Articulo)Session["articuloELiminar"];
+                Entidades.Articulo articulonar = (Entidades.Articulo)Session["articuloEliminar"];
 
-                txbNombreArticulo.Text = articuloEliminar.nombreArticulo;
+                txbNombreArticulo.Text = articulonar.nombreArticulo;
             
-                txbDescripcion.Text = articuloEliminar.descripcion;
+                txbDescripcion.Text = articulonar.descripcion;
             
-                txbExistenciasArticulo.Text = articuloEliminar.cantidadTotal.ToString();
+                txbExistenciasArticulo.Text = articulonar.cantidadTotal.ToString();
               
-                txbCriticaArticulo.Text = articuloEliminar.cantidadCritica.ToString();
+                txbCriticaArticulo.Text = articulonar.cantidadCritica.ToString();
 
-                txbFechaIngresoArticulo.Text = articuloEliminar.fechaIngreso.ToString("d"); ;
+                txbFechaIngresoArticulo.Text = articulonar.fechaIngreso.ToString(); ;
                
             }
         }
@@ -65,14 +52,23 @@ namespace SIBO.Articulo
         /// <returns>-</returns>
         protected void btnActualizar_Click(object sender, EventArgs e)
         {
-           
-                Entidades.Articulo articuloEliminar = (Entidades.Articulo)Session["articuloEliminar"];
-                recepcionistaServicios.eliminarArticulo(articuloEliminar, (String)Session["nombreCompleto"]);
+
+            Entidades.Articulo articulonar = (Entidades.Articulo)Session["articuloEliminar"];
+                recepcionistaServicios.eliminarArticulo(articulonar, (String)Session["nombreCompleto"]);
 
                 String url = Page.ResolveUrl("~/Articulo/AdministrarArticulos.aspx");
                 Response.Redirect(url);           
         }
 
+        /// <summary>
+        /// Fabián Quirós Masís
+        /// 09/04/2018
+        /// Efecto: Redirecciona a la pantalla de Administrar Articuloes
+        /// Requiere:-
+        /// Modifica: Articulo
+        /// Devuelve:-
+        /// </summary>
+        /// <returns>-</returns>
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
             String url = Page.ResolveUrl("~/Articulo/AdministrarArticulos.aspx");

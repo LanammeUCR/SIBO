@@ -92,7 +92,11 @@ namespace SIBO
 
                             Session["rol"] = rol;
                             Session["nombreCompleto"] = nombreCompleto;
-                            String url = Page.ResolveUrl("~/Default.aspx");
+                            String url= Page.ResolveUrl("~/SolicitudesConsumo/AdministrarSolicitudesFuncionario.aspx");
+                            if (rol == 2)
+                            {
+                              url = Page.ResolveUrl("~/Default.aspx");
+                            }
                             Response.Redirect(url);
                         }
                         else

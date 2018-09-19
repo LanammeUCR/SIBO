@@ -39,7 +39,7 @@
                                 <br />
                                 <div style="text-align: center;">
 
-                                    <asp:Button ID="btIngresar" runat="server" Text="Iniciar sesión" CssClass="btn btn-primary btn-md" OnClick="btIngresar_Click" autofocus />
+                                    <asp:Button ID="btIngresar" runat="server" Text="Iniciar sesión" CssClass="btn btn-primary btn-md" OnClick="btIngresar_Click" autofocus="true" />
                                     
                                 </div>
 

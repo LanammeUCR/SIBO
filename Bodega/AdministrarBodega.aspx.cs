@@ -23,31 +23,12 @@ namespace SIBO.Bodega
             int[] rolesPermitidos = { 2 };
             Utilidades.escogerMenu(Page, rolesPermitidos);
 
-            //devuelve los permisos de la pantalla en el siguiente orden:
-            //[0]=ver
-            //[1]=Nuevo
-            //[2]=Editar
-            //[3]=Eliminar
-            Boolean[] permisos = Utilidades.permisosPorPagina(Page, "AdministrarBodegas");
-
-            if (!permisos[0])
-            {
-                String url = Page.ResolveUrl("~/Default.aspx");
-                Response.Redirect(url);
-            }
-
-            if (!permisos[1])
-            {
-                btnNuevo.Visible = false;
-
-            }
-
             if (!Page.IsPostBack)
             {
                 Session["listaBodegas"] = null;
                 Session["bodegaEditar"] = null;
-                Session["bodegaEliminar"] = null;
-
+                Session["bodeganar"] = null;
+                ClientScript.RegisterStartupScript(GetType(), "activar", "limpiar();", true);
                 cargarDatosTblBodegas();
             }
         }
@@ -117,64 +98,34 @@ namespace SIBO.Bodega
         /// <summary>
         /// Fabián Quirós Masís
         /// 09/04/2018
-        /// Efecto: redirecciona a la pantalla donde se elimina una unidad
+        /// Efecto: redirecciona a la pantalla donde se na una unidad
         /// Requiere:
         /// Modifica:
         /// Devuelve:
         /// </summary>
         /// <returns></returns>
-        protected void btnEliminar_Click(object sender, EventArgs e)
+        protected void btnnar_Click(object sender, EventArgs e)
         {
             int idBodega = Convert.ToInt32((((LinkButton)(sender)).CommandArgument).ToString());
 
             List<Entidades.Bodega> listaBodegas = (List<Entidades.Bodega>)Session["listaBodegas"];
 
-            Entidades.Bodega bodegaEliminar = new Entidades.Bodega();
+            Entidades.Bodega bodeganar = new Entidades.Bodega();
 
             foreach (Entidades.Bodega bodega in listaBodegas)
             {
                 if (bodega.idBodega == idBodega)
                 {
-                    bodegaEliminar = bodega;
+                    bodeganar = bodega;
                     break;
                 }
             }
 
-            Session["bodegaEliminar"] = bodegaEliminar;
+            Session["bodegaEliminar"] = bodeganar;
 
             String url = Page.ResolveUrl("~/Bodega/EliminarBodega.aspx");
             Response.Redirect(url);
 
-        }
-        protected void rpBodega_ItemDataBound(object sender, RepeaterItemEventArgs e)
-        {
-            if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
-            {
-                LinkButton btnEditar = e.Item.FindControl("btnEditar") as LinkButton;
-                LinkButton btnEliminar = e.Item.FindControl("btnEliminar") as LinkButton;
-                //devuelve los permisos de la pantalla en el siguiente orden:
-                //[0]=ver
-                //[1]=Nuevo
-                //[2]=Editar
-                //[3]=Eliminar
-                Boolean[] permisos = Utilidades.permisosPorPagina(Page, "AdministrarBodegas");
-
-                if (!permisos[0])
-                {
-                    String url = Page.ResolveUrl("~/Default.aspx");
-                    Response.Redirect(url);
-                }
-
-                if (!permisos[2])
-                {
-                    btnEditar.Visible = false;
-                }
-
-                if (!permisos[3])
-                {
-                    btnEliminar.Visible = false;
-                }
-            }
         }
         #endregion
 

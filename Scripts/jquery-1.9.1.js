@@ -5381,7 +5381,7 @@ function matcherFromGroupMatchers( elementMatchers, setMatchers ) {
         }
 
         if ( seed ) {
-          // Reintegrate element matches to eliminate the need for sorting
+          // Reintegrate element matches to nate the need for sorting
           if ( matchedCount > 0 ) {
             while ( i-- ) {
               if ( !(unmatched[i] || setMatched[i]) ) {

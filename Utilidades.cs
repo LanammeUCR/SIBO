@@ -194,6 +194,7 @@ namespace SIBO
                 if (rolesPermitidos.Contains(rol))
                 {
                     page.Master.FindControl("MenuAdministrador").Visible = true;
+                    page.Master.FindControl("MenuUsuario").Visible = false;
                 }
                 else
                 {
@@ -206,61 +207,31 @@ namespace SIBO
             }
             else
             {
-                page.Session.RemoveAll();
-                page.Session.Abandon();
-                page.Session.Clear();
-                String url = page.ResolveUrl("~/login.aspx");
-                page.Response.Redirect(url);
+                if (rol == 13)
+                {
+                    if (rolesPermitidos.Contains(rol))
+                    {
+                        page.Master.FindControl("MenuAdministrador").Visible = false;
+                        page.Master.FindControl("MenuUsuario").Visible = true;
+                    }
+                    else
+                    {
+                        page.Session.RemoveAll();
+                        page.Session.Abandon();
+                        page.Session.Clear();
+                        String url = page.ResolveUrl("~/login.aspx");
+                        page.Response.Redirect(url);
+                    }
+                }
+                else
+                {
+                    page.Session.RemoveAll();
+                    page.Session.Abandon();
+                    page.Session.Clear();
+                    String url = page.ResolveUrl("~/login.aspx");
+                    page.Response.Redirect(url);
+                }
             }
-        }
-
-        /*Leonardo Carrion
-         15/07/2016
-         Metodo que devuelve un vector con los permisos de Ver, Nuevo, Editar y Eliminar respectivamente
-         segun el nombre de la pagina que ingrese el usuario*/
-        public static Boolean[] permisosPorPagina(Page page, String nombrePagina)
-        {
-            Boolean[] permisos = { true, true, true, true };
-
-            ////esta lista tiene los permisos del usuario, se llena cuando se loguea.
-            //List<Usuario_Rol_Pagina_Permiso> listaPermisos = (List<Usuario_Rol_Pagina_Permiso>)page.Session["listaPermisosPagina"];
-
-            ////se recorre la lista con los permisos por pagina y se guarda cuales permisos tiene el usario para esa pantalla especifica
-            //foreach (Usuario_Rol_Pagina_Permiso usuarioRolPaginaPerniso in listaPermisos)
-            //{
-            //    if (usuarioRolPaginaPerniso.pagina.nombrePagina.Equals(nombrePagina))
-            //    {
-            //        if (usuarioRolPaginaPerniso.permiso.nombrePermiso.Equals("Ver"))
-            //        {
-            //            permisos[0] = true;
-            //        }
-            //        else
-            //        {
-            //            if (usuarioRolPaginaPerniso.permiso.nombrePermiso.Equals("Nuevo"))
-            //            {
-            //                permisos[1] = true;
-            //            }
-            //            else
-            //            {
-            //                if (usuarioRolPaginaPerniso.permiso.nombrePermiso.Equals("Editar"))
-            //                {
-            //                    permisos[2] = true;
-            //                }
-            //                else
-            //                {
-            //                    if (usuarioRolPaginaPerniso.permiso.nombrePermiso.Equals("Eliminar"))
-            //                    {
-            //                        permisos[3] = true;
-            //                    }
-            //                }
-            //            }
-            //        }
-
-            //    }
-            //}
-
-            return permisos;
-
         }
 
         /*

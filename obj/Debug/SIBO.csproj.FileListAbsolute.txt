@@ -1,5 +1,6 @@
 C:\Users\fquiros\Documents\Visual Studio 2012\Projects\SIBO\SIBO\bin\SIBO.dll
 C:\Users\fquiros\Documents\Visual Studio 2012\Projects\SIBO\SIBO\bin\SIBO.pdb
+C:\Users\fquiros\Documents\Visual Studio 2012\Projects\SIBO\SIBO\bin\AjaxControlToolkit.dll
 C:\Users\fquiros\Documents\Visual Studio 2012\Projects\SIBO\SIBO\bin\Entidades.dll
 C:\Users\fquiros\Documents\Visual Studio 2012\Projects\SIBO\SIBO\bin\EntityFramework.dll
 C:\Users\fquiros\Documents\Visual Studio 2012\Projects\SIBO\SIBO\bin\Servicios.dll
@@ -16,5 +17,111 @@ C:\Users\fquiros\Documents\Visual Studio 2012\Projects\SIBO\SIBO\bin\es\EntityFr
 C:\Users\fquiros\Documents\Visual Studio 2012\Projects\SIBO\SIBO\bin\es\System.Web.Optimization.resources.dll
 C:\Users\fquiros\Documents\Visual Studio 2012\Projects\SIBO\SIBO\bin\es\System.Web.Providers.resources.dll
 C:\Users\fquiros\Documents\Visual Studio 2012\Projects\SIBO\SIBO\obj\Debug\SIBO.csprojResolveAssemblyReference.cache
+C:\Users\fquiros\Documents\Visual Studio 2012\Projects\SIBO\SIBO\obj\Debug\RdlCompile.cache
+C:\Users\fquiros\Documents\Visual Studio 2012\Projects\SIBO\SIBO\obj\Debug\RdlCompile.compiled
 C:\Users\fquiros\Documents\Visual Studio 2012\Projects\SIBO\SIBO\obj\Debug\SIBO.dll
 C:\Users\fquiros\Documents\Visual Studio 2012\Projects\SIBO\SIBO\obj\Debug\SIBO.pdb
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\SqlServerTypes\x64\msvcr120.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\SqlServerTypes\x86\msvcr120.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\SIBO.dll.config
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\SIBO.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\SIBO.pdb
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\Entidades.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\EntityFramework.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\Microsoft.ReportViewer.Common.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\Microsoft.ReportViewer.Design.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\Microsoft.ReportViewer.WebDesign.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\Microsoft.ReportViewer.WebForms.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\Microsoft.ReportViewer.WinForms.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\Microsoft.SqlServer.Types.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\Servicios.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\System.Web.Optimization.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\System.Web.Providers.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\WebGrease.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\AccesoDatos.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\EnvDTE.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\Microsoft.VisualStudio.Shell.Interop.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\Antlr3.Runtime.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\stdole.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\Microsoft.VisualStudio.OLE.Interop.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\Microsoft.VisualStudio.TextManager.Interop.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\Microsoft.MSXML.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\Entidades.pdb
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\Servicios.pdb
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\EntityFramework.xml
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\AccesoDatos.pdb
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\de\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\es\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\fr\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\it\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\ja\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\ko\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\pt\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\ru\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\de\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\es\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\fr\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\it\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\ja\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\ko\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\pt\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\ru\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\de\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\es\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\fr\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\it\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\ja\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\ko\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\pt\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\ru\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\zh-CHS\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\zh-CHT\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\de\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\es\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\fr\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\it\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\ja\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\ko\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\pt\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\ru\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\zh-CHS\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\zh-CHT\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\de\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\fr\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\it\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\ja\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\ko\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\pt\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\ru\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\es\EntityFramework.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\es\System.Web.Optimization.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\bin\es\System.Web.Providers.resources.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\obj\Debug\SIBO.csprojAssemblyReference.cache
+C:\Users\fquiros\Documents\SIBO\SIBO\obj\Debug\SIBO.csproj.CoreCompileInputs.cache
+C:\Users\fquiros\Documents\SIBO\SIBO\obj\Debug\SIBO.csproj.CopyComplete
+C:\Users\fquiros\Documents\SIBO\SIBO\obj\Debug\SIBO.dll
+C:\Users\fquiros\Documents\SIBO\SIBO\obj\Debug\SIBO.pdb

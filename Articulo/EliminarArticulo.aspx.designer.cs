@@ -10,16 +10,16 @@
 namespace SIBO.Articulo {
     
     
-    public partial class EliminarArticulo {
+    public partial class narArticulo {
         
         /// <summary>
-        /// Control lblEliminarArticulo.
+        /// Control lblnarArticulo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEliminarArticulo;
+        protected global::System.Web.UI.WebControls.Label lblnarArticulo;
         
         /// <summary>
         /// Control lblNombreArticulo.
@@ -202,13 +202,13 @@ namespace SIBO.Articulo {
         protected global::System.Web.UI.WebControls.Label lblFechaArticuloIncorrecto;
         
         /// <summary>
-        /// Control btnEliminar.
+        /// Control btnnar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEliminar;
+        protected global::System.Web.UI.WebControls.Button btnnar;
         
         /// <summary>
         /// Control btnCancelar.
