@@ -13,13 +13,22 @@ namespace SIBO.Bodega {
     public partial class AdministrarBodega {
         
         /// <summary>
-        /// Control lblAdministrarUnidades.
+        /// Control lblAdministrarBodegas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAdministrarUnidades;
+        protected global::System.Web.UI.WebControls.Label lblAdministrarBodegas;
+        
+        /// <summary>
+        /// Control Button1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
         /// Control rpBodega.

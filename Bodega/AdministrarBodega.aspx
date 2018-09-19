@@ -6,19 +6,19 @@
     <div class="divRedondo">
         <div class="row">
             <center>
-            <asp:Label ID="lblAdministrarBodegas" runat="server" Text="Administrar Bodegas" Font-Size="Large" ForeColor="Black"></asp:Label>
+            <asp:Label ID="lblAdministrarBodegas" runat="server" Text="Catálogo Bodegas" Font-Size="Large" ForeColor="Black"></asp:Label>
             </center>
-            <%-- fin titulo pantalla --%>
-
-            <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
-                <hr />
+            <%-- fin titulo pantalla --%>           
+               <%-- botones --%>
+            <div class="col-md-2 col-xs-2 col-sm-2 col-md-offset-10 col-xs-offset-10 col-sm-offset-10">
+                <asp:Button ID="Button1" runat="server" Text="Nueva Bodega" CssClass="btn btn-primary" OnClick="btnNuevo_Click" />
             </div>
-
+            <%-- fin botones --%>     
             <%-- tabla--%>
 
             <div class="col-md-12 col-xs-12 col-sm-12" style="text-align: center; overflow-y: auto; top: 0px; left: 0px;">
 
-                <asp:Repeater ID="rpBodega" runat="server" OnItemDataBound="rpBodega_ItemDataBound">
+                <asp:Repeater ID="rpBodega" runat="server">
                     <HeaderTemplate>
                         <table id="tblBodega" class="row-border table-striped">
                             <thead>
@@ -26,7 +26,7 @@
                                     <th></th>
                                     <th>Nombre Unidad</th>
                                     <th>Dirección</th>
-                                    <th>Numero Teléfono</th>
+                                  
                                 </tr>
                             </thead>
                     </HeaderTemplate>
@@ -35,17 +35,14 @@
                         <tr>
                             <td>
                                 <asp:LinkButton ID="btnEditar" runat="server" ToolTip="Editar" OnClick="btnEditar_Click" CommandArgument='<%# Eval("idBodega") %>'><span class="btn glyphicon glyphicon-pencil"></span></asp:LinkButton>
-                                <asp:LinkButton ID="btnEliminar" runat="server" ToolTip="Eliminar" OnClick="btnEliminar_Click" CommandArgument='<%# Eval("idBodega") %>'><span class="btn glyphicon glyphicon-trash"></span></asp:LinkButton>
+                                <asp:LinkButton ID="btnnar" runat="server" ToolTip="nar" OnClick="btnnar_Click" CommandArgument='<%# Eval("idBodega") %>'><span class="btn glyphicon glyphicon-trash"></span></asp:LinkButton>
                             </td>
                             <td>
                                 <%# Eval("nombre") %>
                             </td>
                             <td>
                                 <%# Eval("direccion") %>
-                            </td>
-                            <td>
-                                <%# Eval("telefono") %>
-                            </td>                           
+                            </td>                                            
                         </tr>
 
                     </ItemTemplate>
@@ -55,8 +52,7 @@
                             <tr id="filterrow">
                                 <td></td>
                                 <th>Nombre Unidad</th>
-                                 <th>Dirección</th>
-                                <th>Numero Teléfono</th>                               
+                                 <th>Dirección</th>                                            
                             </tr>
                         </thead>
                         </table>
@@ -156,7 +152,9 @@
                 .draw();
         });
 
-
+        function limpiar() {
+            $("#tblBodega thead input").keyup();
+        }
 
         // aplicar filtro
 

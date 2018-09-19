@@ -94,112 +94,103 @@ namespace SIBO.Articulo {
         protected global::System.Web.UI.WebControls.Label lbDescripcionArticuloIncorrecto;
         
         /// <summary>
-        /// Control lblExistenciasArticulo.
+        /// Control lblCodigo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblExistenciasArticulo;
+        protected global::System.Web.UI.WebControls.Label lblCodigo;
         
         /// <summary>
-        /// Control txbExistenciasArticulo.
+        /// Control txbCodigo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbExistenciasArticulo;
+        protected global::System.Web.UI.WebControls.TextBox txbCodigo;
         
         /// <summary>
-        /// Control divExistenciasArticuloIncorrecto.
+        /// Control divCodigoArticuloIncorrecto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divExistenciasArticuloIncorrecto;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divCodigoArticuloIncorrecto;
         
         /// <summary>
-        /// Control lblExistenciasArticuloIncorrecto.
+        /// Control lbCodigoArticuloIncorrecto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblExistenciasArticuloIncorrecto;
+        protected global::System.Web.UI.WebControls.Label lbCodigoArticuloIncorrecto;
         
         /// <summary>
-        /// Control lblCriticaArticulo.
+        /// Control lblTiempoEntrega.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCriticaArticulo;
+        protected global::System.Web.UI.WebControls.Label lblTiempoEntrega;
         
         /// <summary>
-        /// Control txbCriticaArticulo.
+        /// Control txbTiempoEntrega.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbCriticaArticulo;
+        protected global::System.Web.UI.WebControls.TextBox txbTiempoEntrega;
         
         /// <summary>
-        /// Control divCriticaArticuloIncorrecto.
+        /// Control lblGastoAnual.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divCriticaArticuloIncorrecto;
+        protected global::System.Web.UI.WebControls.Label lblGastoAnual;
         
         /// <summary>
-        /// Control lblCriticaArticuloIncorrecto.
+        /// Control txbGastoAnual.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCriticaArticuloIncorrecto;
+        protected global::System.Web.UI.WebControls.TextBox txbGastoAnual;
         
         /// <summary>
-        /// Control lblFechaArticulo.
+        /// Control lblCantidadCritica.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFechaArticulo;
+        protected global::System.Web.UI.WebControls.Label lblCantidadCritica;
         
         /// <summary>
-        /// Control cldFechaIngresoArticulo.
+        /// Control txbCantidadCritica.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar cldFechaIngresoArticulo;
+        protected global::System.Web.UI.WebControls.TextBox txbCantidadCritica;
         
         /// <summary>
-        /// Control divFechaArticuloIncorrecto.
+        /// Control chkCritica.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divFechaArticuloIncorrecto;
-        
-        /// <summary>
-        /// Control lblFechaArticuloIncorrecto.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFechaArticuloIncorrecto;
+        protected global::System.Web.UI.WebControls.CheckBox chkCritica;
         
         /// <summary>
         /// Control btnAgregar.

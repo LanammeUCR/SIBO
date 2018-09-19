@@ -94,40 +94,40 @@ namespace SIBO.Articulo {
         protected global::System.Web.UI.WebControls.Label lbDescripcionArticuloIncorrecto;
         
         /// <summary>
-        /// Control lblExistenciasArticulo.
+        /// Control lblTiempoEntrega.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblExistenciasArticulo;
+        protected global::System.Web.UI.WebControls.Label lblTiempoEntrega;
         
         /// <summary>
-        /// Control txbExistenciasArticulo.
+        /// Control txbTiempoEntrega.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbExistenciasArticulo;
+        protected global::System.Web.UI.WebControls.TextBox txbTiempoEntrega;
         
         /// <summary>
-        /// Control divExistenciasArticuloIncorrecto.
+        /// Control lblGastoAnual.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divExistenciasArticuloIncorrecto;
+        protected global::System.Web.UI.WebControls.Label lblGastoAnual;
         
         /// <summary>
-        /// Control lblExistenciasArticuloIncorrecto.
+        /// Control txbGastoAnual.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblExistenciasArticuloIncorrecto;
+        protected global::System.Web.UI.WebControls.TextBox txbGastoAnual;
         
         /// <summary>
         /// Control lblCriticaArticulo.
@@ -139,13 +139,31 @@ namespace SIBO.Articulo {
         protected global::System.Web.UI.WebControls.Label lblCriticaArticulo;
         
         /// <summary>
-        /// Control txbCriticaArticulo.
+        /// Control ScriptManager1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbCriticaArticulo;
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        
+        /// <summary>
+        /// Control UpdatePanel1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        
+        /// <summary>
+        /// Control txbCantidadCritica.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txbCantidadCritica;
         
         /// <summary>
         /// Control divCriticaArticuloIncorrecto.
@@ -166,6 +184,15 @@ namespace SIBO.Articulo {
         protected global::System.Web.UI.WebControls.Label lblCriticaArticuloIncorrecto;
         
         /// <summary>
+        /// Control chkCritica.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkCritica;
+        
+        /// <summary>
         /// Control lblFechaArticulo.
         /// </summary>
         /// <remarks>
@@ -175,13 +202,13 @@ namespace SIBO.Articulo {
         protected global::System.Web.UI.WebControls.Label lblFechaArticulo;
         
         /// <summary>
-        /// Control cldFechaIngresoArticulo.
+        /// Control txbFecha.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar cldFechaIngresoArticulo;
+        protected global::System.Web.UI.WebControls.TextBox txbFecha;
         
         /// <summary>
         /// Control divFechaArticuloIncorrecto.
@@ -193,13 +220,13 @@ namespace SIBO.Articulo {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divFechaArticuloIncorrecto;
         
         /// <summary>
-        /// Control lblFechaArticuloIncorrecto.
+        /// Control lblFechaArticuloError.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFechaArticuloIncorrecto;
+        protected global::System.Web.UI.WebControls.Label lblFechaArticuloError;
         
         /// <summary>
         /// Control btnEditar.

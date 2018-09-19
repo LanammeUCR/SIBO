@@ -19,6 +19,8 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -38,7 +40,38 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=18.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\ASP.NET AJAX Control Toolkit\Bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.1000.523\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.1000.523\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.1000.523\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.1000.523\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.1000.523\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.1000.523\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.1000.523\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
@@ -72,19 +105,54 @@
   <ItemGroup>
     <Content Include="ArchivoBaseDatos.txt" />
     <Content Include="Articulo\AdministrarArticulos.aspx" />
+    <Content Include="Articulo\AgregarUbicacionArticulo.aspx" />
+    <Content Include="Articulo\ArticulosUbicaciones.aspx" />
+    <Content Include="Articulo\EliminarUbicacionArticulo.aspx" />
+    <Content Include="Articulo\EditarUbicacionArticulo.aspx" />
+    <Content Include="Informes\Reporte.aspx" />
+    <Content Include="Informes\ReporteExistencias.aspx" />
+    <Content Include="Inventario\ArticulosUbicaciones.aspx" />
+    <Content Include="PedidosProveedor\AdministrarSolicitudesProveedor.aspx" />
+    <Content Include="PedidosProveedor\EditarPedidoProveedor.aspx" />
+    <Content Include="PedidosProveedor\EliminarPedidoProveedor.aspx" />
+    <Content Include="PedidosProveedor\SolicitudProveedor.aspx" />
+    <Content Include="PedidosProveedor\VerPedidoProveedor.aspx" />
+    <Content Include="Scripts\jquery-1.12.4.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="SolicitudesConsumo\AdministrarSolicitudesConsumo.aspx" />
+    <Content Include="SolicitudesConsumo\AdministrarSolicitudesFuncionario.aspx" />
     <Content Include="Articulo\AgregarArticulo.aspx" />
     <Content Include="Articulo\EditarArticulo.aspx" />
+    <Content Include="SolicitudesConsumo\SolicitudArticuloFuncionario.aspx" />
+    <Content Include="SolicitudesConsumo\VerSolicitudConsumoFuncionario.aspx" />
+    <Content Include="SolicitudesConsumo\VerSolicitudConsumo.aspx" />
+    <Content Include="SolicitudesConsumo\EditarSolicitudConsumoFuncionario.aspx" />
+    <Content Include="SolicitudesConsumo\EditarSolicitudConsumo.aspx" />
     <Content Include="Articulo\EliminarArticulo.aspx" />
-    <Content Include="Articulo\SolicitudesArticulos.aspx" />
+    <Content Include="SolicitudesConsumo\EliminarSolicitudConsumo.aspx" />
+    <Content Include="SolicitudesConsumo\SolicitudArticulo.aspx" />
     <Content Include="Bodega\AdministrarBodega.aspx" />
     <Content Include="Bodega\AgregarBodega.aspx" />
     <Content Include="Bodega\EditarBodega.aspx" />
     <Content Include="Bodega\EliminarBodega.aspx" />
-    <Content Include="Pedidos\AdministrarProveedores.aspx" />
-    <Content Include="Pedidos\EditarProveedor.aspx" />
-    <Content Include="Pedidos\EliminarProveedor.aspx" />
-    <Content Include="Unidad\AdministrarUnidades.aspx" />
-    <Content Include="Unidad\AgregarUnidad.aspx" />
+    <Content Include="Proveedores\AdministrarProveedores.aspx" />
+    <Content Include="Proveedores\EditarProveedor.aspx" />
+    <Content Include="Proveedores\EliminarProveedor.aspx" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Recepcion\AdministrarRecepcion.aspx" />
+    <Content Include="Recepcion\AgregarRecepcion.aspx" />
     <Content Include="Configuracion\Configuracion.aspx" />
     <Content Include="Content\DataTables\datatables.min.css" />
     <Content Include="Content\DataTables\images\details_close.png" />
@@ -116,7 +184,7 @@
     <Content Include="Imagenes\logo_LANAMME-140x140.png" />
     <Content Include="Imagenes\UCR informe.png" />
     <Content Include="Login.aspx" />
-    <Content Include="Pedidos\AgregarProveedor.aspx" />
+    <Content Include="Proveedores\AgregarProveedor.aspx" />
     <Content Include="Scripts\abrirfile.js" />
     <Content Include="Scripts\bootbox.min.js" />
     <Content Include="Scripts\bootstrap-datetimepicker.js" />
@@ -136,10 +204,12 @@
     <Content Include="Scripts\npm.js" />
     <Content Include="Scripts\pdf.js" />
     <Content Include="Scripts\transition.js" />
-    <Content Include="Unidad\EditarUnidad.aspx" />
-    <Content Include="Unidad\EliminarUnidad.aspx" />
-    <Content Include="Unidad\FuncionariosPorUnidad.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Recepcion\EditarRecepcion.aspx" />
+    <Content Include="Recepcion\EliminarRecepcion.aspx" />
+    <Content Include="Recepcion\FuncionariosPorUnidad.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\bootstrap.css.map" />
@@ -179,6 +249,7 @@
     <Content Include="font-awesome\scss\_rotated-flipped.scss" />
     <Content Include="font-awesome\scss\_stacked.scss" />
     <Content Include="font-awesome\scss\_variables.scss" />
+    <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -194,6 +265,104 @@
     <Compile Include="Articulo\AdministrarArticulos.aspx.designer.cs">
       <DependentUpon>AdministrarArticulos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Articulo\AgregarUbicacionArticulo.aspx.cs">
+      <DependentUpon>AgregarUbicacionArticulo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Articulo\AgregarUbicacionArticulo.aspx.designer.cs">
+      <DependentUpon>AgregarUbicacionArticulo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Articulo\ArticulosUbicaciones.aspx.cs">
+      <DependentUpon>ArticulosUbicaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Articulo\ArticulosUbicaciones.aspx.designer.cs">
+      <DependentUpon>ArticulosUbicaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Articulo\EliminarUbicacionArticulo.aspx.cs">
+      <DependentUpon>EliminarUbicacionArticulo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Articulo\EliminarUbicacionArticulo.aspx.designer.cs">
+      <DependentUpon>EliminarUbicacionArticulo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Articulo\EditarUbicacionArticulo.aspx.cs">
+      <DependentUpon>EditarUbicacionArticulo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Articulo\EditarUbicacionArticulo.aspx.designer.cs">
+      <DependentUpon>EditarUbicacionArticulo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Informes\Reporte.aspx.cs">
+      <DependentUpon>Reporte.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Informes\Reporte.aspx.designer.cs">
+      <DependentUpon>Reporte.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Informes\ReporteExistencias.aspx.cs">
+      <DependentUpon>ReporteExistencias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Informes\ReporteExistencias.aspx.designer.cs">
+      <DependentUpon>ReporteExistencias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\ArticulosUbicaciones.aspx.cs">
+      <DependentUpon>ArticulosUbicaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inventario\ArticulosUbicaciones.aspx.designer.cs">
+      <DependentUpon>ArticulosUbicaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PedidosProveedor\AdministrarSolicitudesProveedor.aspx.cs">
+      <DependentUpon>AdministrarSolicitudesProveedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PedidosProveedor\AdministrarSolicitudesProveedor.aspx.designer.cs">
+      <DependentUpon>AdministrarSolicitudesProveedor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PedidosProveedor\EditarPedidoProveedor.aspx.cs">
+      <DependentUpon>EditarPedidoProveedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PedidosProveedor\EditarPedidoProveedor.aspx.designer.cs">
+      <DependentUpon>EditarPedidoProveedor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PedidosProveedor\EliminarPedidoProveedor.aspx.cs">
+      <DependentUpon>EliminarPedidoProveedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PedidosProveedor\EliminarPedidoProveedor.aspx.designer.cs">
+      <DependentUpon>EliminarPedidoProveedor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PedidosProveedor\SolicitudProveedor.aspx.cs">
+      <DependentUpon>SolicitudProveedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PedidosProveedor\SolicitudProveedor.aspx.designer.cs">
+      <DependentUpon>SolicitudProveedor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PedidosProveedor\VerPedidoProveedor.aspx.cs">
+      <DependentUpon>VerPedidoProveedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PedidosProveedor\VerPedidoProveedor.aspx.designer.cs">
+      <DependentUpon>VerPedidoProveedor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SolicitudesConsumo\AdministrarSolicitudesConsumo.aspx.cs">
+      <DependentUpon>AdministrarSolicitudesConsumo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SolicitudesConsumo\AdministrarSolicitudesConsumo.aspx.designer.cs">
+      <DependentUpon>AdministrarSolicitudesConsumo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SolicitudesConsumo\AdministrarSolicitudesFuncionario.aspx.cs">
+      <DependentUpon>AdministrarSolicitudesFuncionario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SolicitudesConsumo\AdministrarSolicitudesFuncionario.aspx.designer.cs">
+      <DependentUpon>AdministrarSolicitudesFuncionario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Articulo\AgregarArticulo.aspx.cs">
       <DependentUpon>AgregarArticulo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -208,6 +377,41 @@
     <Compile Include="Articulo\EditarArticulo.aspx.designer.cs">
       <DependentUpon>EditarArticulo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="SolicitudesConsumo\SolicitudArticuloFuncionario.aspx.cs">
+      <DependentUpon>SolicitudArticuloFuncionario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SolicitudesConsumo\SolicitudArticuloFuncionario.aspx.designer.cs">
+      <DependentUpon>SolicitudArticuloFuncionario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SolicitudesConsumo\VerSolicitudConsumoFuncionario.aspx.cs">
+      <DependentUpon>VerSolicitudConsumoFuncionario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SolicitudesConsumo\VerSolicitudConsumoFuncionario.aspx.designer.cs">
+      <DependentUpon>VerSolicitudConsumoFuncionario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SolicitudesConsumo\VerSolicitudConsumo.aspx.cs">
+      <DependentUpon>VerSolicitudConsumo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SolicitudesConsumo\VerSolicitudConsumo.aspx.designer.cs">
+      <DependentUpon>VerSolicitudConsumo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SolicitudesConsumo\EditarSolicitudConsumoFuncionario.aspx.cs">
+      <DependentUpon>EditarSolicitudConsumoFuncionario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SolicitudesConsumo\EditarSolicitudConsumoFuncionario.aspx.designer.cs">
+      <DependentUpon>EditarSolicitudConsumoFuncionario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SolicitudesConsumo\EditarSolicitudConsumo.aspx.cs">
+      <DependentUpon>EditarSolicitudConsumo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SolicitudesConsumo\EditarSolicitudConsumo.aspx.designer.cs">
+      <DependentUpon>EditarSolicitudConsumo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Articulo\EliminarArticulo.aspx.cs">
       <DependentUpon>EliminarArticulo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -215,12 +419,19 @@
     <Compile Include="Articulo\EliminarArticulo.aspx.designer.cs">
       <DependentUpon>EliminarArticulo.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Articulo\SolicitudesArticulos.aspx.cs">
-      <DependentUpon>SolicitudesArticulos.aspx</DependentUpon>
+    <Compile Include="SolicitudesConsumo\EliminarSolicitudConsumo.aspx.cs">
+      <DependentUpon>EliminarSolicitudConsumo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Articulo\SolicitudesArticulos.aspx.designer.cs">
-      <DependentUpon>SolicitudesArticulos.aspx</DependentUpon>
+    <Compile Include="SolicitudesConsumo\EliminarSolicitudConsumo.aspx.designer.cs">
+      <DependentUpon>EliminarSolicitudConsumo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SolicitudesConsumo\SolicitudArticulo.aspx.cs">
+      <DependentUpon>SolicitudArticulo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SolicitudesConsumo\SolicitudArticulo.aspx.designer.cs">
+      <DependentUpon>SolicitudArticulo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Bodega\AdministrarBodega.aspx.cs">
       <DependentUpon>AdministrarBodega.aspx</DependentUpon>
@@ -250,40 +461,41 @@
     <Compile Include="Bodega\EliminarBodega.aspx.designer.cs">
       <DependentUpon>EliminarBodega.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pedidos\AdministrarProveedores.aspx.cs">
+    <Compile Include="Proveedores\AdministrarProveedores.aspx.cs">
       <DependentUpon>AdministrarProveedores.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pedidos\AdministrarProveedores.aspx.designer.cs">
+    <Compile Include="Proveedores\AdministrarProveedores.aspx.designer.cs">
       <DependentUpon>AdministrarProveedores.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pedidos\EditarProveedor.aspx.cs">
+    <Compile Include="Proveedores\EditarProveedor.aspx.cs">
       <DependentUpon>EditarProveedor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pedidos\EditarProveedor.aspx.designer.cs">
+    <Compile Include="Proveedores\EditarProveedor.aspx.designer.cs">
       <DependentUpon>EditarProveedor.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pedidos\EliminarProveedor.aspx.cs">
+    <Compile Include="Proveedores\EliminarProveedor.aspx.cs">
       <DependentUpon>EliminarProveedor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pedidos\EliminarProveedor.aspx.designer.cs">
+    <Compile Include="Proveedores\EliminarProveedor.aspx.designer.cs">
       <DependentUpon>EliminarProveedor.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Unidad\AdministrarUnidades.aspx.cs">
-      <DependentUpon>AdministrarUnidades.aspx</DependentUpon>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Recepcion\AdministrarRecepcion.aspx.cs">
+      <DependentUpon>AdministrarRecepcion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Unidad\AdministrarUnidades.aspx.designer.cs">
-      <DependentUpon>AdministrarUnidades.aspx</DependentUpon>
+    <Compile Include="Recepcion\AdministrarRecepcion.aspx.designer.cs">
+      <DependentUpon>AdministrarRecepcion.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Unidad\AgregarUnidad.aspx.cs">
-      <DependentUpon>AgregarUnidad.aspx</DependentUpon>
+    <Compile Include="Recepcion\AgregarRecepcion.aspx.cs">
+      <DependentUpon>AgregarRecepcion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Unidad\AgregarUnidad.aspx.designer.cs">
-      <DependentUpon>AgregarUnidad.aspx</DependentUpon>
+    <Compile Include="Recepcion\AgregarRecepcion.aspx.designer.cs">
+      <DependentUpon>AgregarRecepcion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Configuracion\Configuracion.aspx.cs">
       <DependentUpon>Configuracion.aspx</DependentUpon>
@@ -307,11 +519,11 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Pedidos\AgregarProveedor.aspx.cs">
+    <Compile Include="Proveedores\AgregarProveedor.aspx.cs">
       <DependentUpon>AgregarProveedor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pedidos\AgregarProveedor.aspx.designer.cs">
+    <Compile Include="Proveedores\AgregarProveedor.aspx.designer.cs">
       <DependentUpon>AgregarProveedor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
@@ -321,25 +533,25 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
-    <Compile Include="Unidad\EditarUnidad.aspx.cs">
-      <DependentUpon>EditarUnidad.aspx</DependentUpon>
+    <Compile Include="Recepcion\EditarRecepcion.aspx.cs">
+      <DependentUpon>EditarRecepcion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Unidad\EditarUnidad.aspx.designer.cs">
-      <DependentUpon>EditarUnidad.aspx</DependentUpon>
+    <Compile Include="Recepcion\EditarRecepcion.aspx.designer.cs">
+      <DependentUpon>EditarRecepcion.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Unidad\EliminarUnidad.aspx.cs">
-      <DependentUpon>EliminarUnidad.aspx</DependentUpon>
+    <Compile Include="Recepcion\EliminarRecepcion.aspx.cs">
+      <DependentUpon>EliminarRecepcion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Unidad\EliminarUnidad.aspx.designer.cs">
-      <DependentUpon>EliminarUnidad.aspx</DependentUpon>
+    <Compile Include="Recepcion\EliminarRecepcion.aspx.designer.cs">
+      <DependentUpon>EliminarRecepcion.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Unidad\FuncionariosPorUnidad.aspx.cs">
+    <Compile Include="Recepcion\FuncionariosPorUnidad.aspx.cs">
       <DependentUpon>FuncionariosPorUnidad.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Unidad\FuncionariosPorUnidad.aspx.designer.cs">
+    <Compile Include="Recepcion\FuncionariosPorUnidad.aspx.designer.cs">
       <DependentUpon>FuncionariosPorUnidad.aspx</DependentUpon>
     </Compile>
     <Compile Include="Utilidades.cs" />
@@ -358,7 +570,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Consumo\" />
+    <EmbeddedResource Include="Informes\Report1.rdlc" />
+    <EmbeddedResource Include="Informes\ReporteExistencias.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

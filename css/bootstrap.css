@@ -121,8 +121,7 @@ input,
 optgroup,
 select,
 textarea {
-  margin: 0;
-  font: inherit;
+  margin: 0 0 0px 0;
   color: inherit;
 }
 button {
@@ -1661,6 +1660,8 @@ pre code {
 }
 .col-xs-3 {
   width: 25%;
+    top: 0px;
+    left: 1px;
 }
 .col-xs-2 {
   width: 16.66666667%;
@@ -2572,7 +2573,6 @@ input[type="range"] {
 }
 select[multiple],
 select[size] {
-  height: auto;
 }
 input[type="file"]:focus,
 input[type="radio"]:focus,

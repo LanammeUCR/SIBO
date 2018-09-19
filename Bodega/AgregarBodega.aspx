@@ -49,23 +49,8 @@
             </div>
             <div class="col-md-12 col-xs-12 col-sm-12">
                 <br />
-            </div>
-            <div class="col-md-12 col-xs-12 col-sm-12">
-
-                <div class="col-md-2 col-xs-2 col-sm-2">
-                    <asp:Label ID="lblTelefonoBodega" runat="server" Text="Teléfono <span style='color:red'>*</span> " Font-Size="Medium" ForeColor="Black" CssClass="label"></asp:Label>
-                </div>
-                <div class="col-md-4 col-xs-4 col-sm-4">
-                    <asp:TextBox class="form-control" ID="txbTelefonoBodega" runat="server"></asp:TextBox>
-                </div>
-                <div id="divTelefonoBodegaIncorrecto" runat="server" style="display: none" class="col-md-6 col-xs-6 col-sm-6">
-                    <asp:Label ID="lblTeléfonoBodegaIncorrecto" runat="server" Font-Size="Small" class="label alert-danger" Text="Espacio Obligatorio" ForeColor="Red"></asp:Label>
-                </div>
-
-            </div>
-
-            <div class="col-xs-12">
-                <br />
+            </div>         
+            <div class="col-xs-12">              
                 <div class="col-xs-12">
                     <h6 style="text-align: left">Los campos marcados con <span style='color: red'>*</span> son requeridos.</h6>
                 </div>
@@ -119,19 +104,7 @@
                       txtBox.className = "form-control alert-danger";
                       direccionBodegaIncorrecto.style.display = 'block';
                   }
-              }
-
-            if (id == "txbTelefonoBodega") {
-                var telefonoBodegaIncorrecto = document.getElementById('<%= divTelefonoBodegaIncorrecto.ClientID %>');
-                if (txtBox.value != "") {
-                    txtBox.className = "form-control";
-
-                    telefonoBodegaIncorrecto.style.display = 'none';
-                } else {
-                    txtBox.className = "form-control alert-danger";
-                    telefonoBodegaIncorrecto.style.display = 'block';
-                }
-            }
+              }           
         }
     </script>
 </asp:Content>

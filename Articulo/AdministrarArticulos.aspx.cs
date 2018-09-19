@@ -23,30 +23,13 @@ namespace SIBO.Articulo
             int[] rolesPermitidos = { 2 };
             Utilidades.escogerMenu(Page, rolesPermitidos);
 
-            //devuelve los permisos de la pantalla en el siguiente orden:
-            //[0]=ver
-            //[1]=Nuevo
-            //[2]=Editar
-            //[3]=Eliminar
-            Boolean[] permisos = Utilidades.permisosPorPagina(Page, "AdministrarArticulos");
-
-            if (!permisos[0])
-            {
-                String url = Page.ResolveUrl("~/Default.aspx");
-                Response.Redirect(url);
-            }
-
-            if (!permisos[1])
-            {
-                btnNuevo.Visible = false;
-
-            }
-
             if (!Page.IsPostBack)
             {
                 Session["listaArticulos"] = null;
                 Session["articuloEditar"] = null;
                 Session["articuloELiminar"] = null;
+                Session["articuloUbicacion"] = null;
+                ClientScript.RegisterStartupScript(GetType(), "activar", "limpiar();", true);
                 cargarDatosTblArticuloes();
             }
         }
@@ -56,7 +39,7 @@ namespace SIBO.Articulo
         /// <summary>
         /// Fabián Quirós Masís
         /// 09/04/2018
-        /// Efecto: Llenar la tabla con los datos de las articuloes que se encuantran en la base de datos
+        /// Efecto: Llenar la tabla con los datos de las articulos que se encuantran en la base de datos
         /// Requiere:-
         /// Modifica:-
         /// Devuelve:-
@@ -96,17 +79,8 @@ namespace SIBO.Articulo
 
             List<Entidades.Articulo> listaArticulos = (List<Entidades.Articulo>)Session["listaArticulos"];
 
-            Entidades.Articulo articuloEditar = new Entidades.Articulo();
-
-            foreach (Entidades.Articulo articulo in listaArticulos)
-            {
-                if (articulo.idArticulo == idArticulo)
-                {
-                    articuloEditar = articulo;
-                    break;
-                }
-            }
-
+            Entidades.Articulo articuloEditar = listaArticulos.Find(x => x.idArticulo == idArticulo );
+            
             Session["articuloEditar"] = articuloEditar;
 
             String url = Page.ResolveUrl("~/Articulo/EditarArticulo.aspx");
@@ -128,54 +102,37 @@ namespace SIBO.Articulo
 
             List<Entidades.Articulo> listaArticulos = (List<Entidades.Articulo>)Session["listaArticulos"];
 
-            Entidades.Articulo articuloEliminar = new Entidades.Articulo();
-
-            foreach (Entidades.Articulo articulo in listaArticulos)
-            {
-                if (articulo.idArticulo == idArticulo)
-                {
-                    articuloEliminar = articulo;
-                    break;
-                }
-            }
+            Entidades.Articulo articuloEliminar = listaArticulos.Find(x => x.idArticulo == idArticulo);
 
             Session["articuloELiminar"] = articuloEliminar;
 
             String url = Page.ResolveUrl("~/Articulo/EliminarArticulo.aspx");
             Response.Redirect(url);
 
-        }
-        protected void rpArticulo_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        }       
+
+        /// <summary>
+        /// Fabián Quirós Masís
+        /// 09/04/2018
+        /// Efecto: redirecciona a la pantalla donde administran las ubicaciones del articulo
+        /// Requiere:
+        /// Modifica:
+        /// Devuelve:
+        /// </summary>
+        /// <returns></returns>
+        protected void btnUbicaciones_Click(object sender, EventArgs e)
         {
-            if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
-            {
-                LinkButton btnEditar = e.Item.FindControl("btnEditar") as LinkButton;
-                LinkButton btnEliminar = e.Item.FindControl("btnEliminar") as LinkButton;
-                //devuelve los permisos de la pantalla en el siguiente orden:
-                //[0]=ver
-                //[1]=Nuevo
-                //[2]=Editar
-                //[3]=Eliminar
-                Boolean[] permisos = Utilidades.permisosPorPagina(Page, "AdministrarArticulos");
+            int idArticulo = Convert.ToInt32((((LinkButton)(sender)).CommandArgument).ToString());
 
-                if (!permisos[0])
-                {
-                    String url = Page.ResolveUrl("~/Default.aspx");
-                    Response.Redirect(url);
-                }
+            List<Entidades.Articulo> listaArticulos = (List<Entidades.Articulo>)Session["listaArticulos"];
 
-                if (!permisos[2])
-                {
-                    btnEditar.Visible = false;
-                }
+            Entidades.Articulo articuloUbicacion = listaArticulos.Find(x => x.idArticulo == idArticulo);
 
-                if (!permisos[3])
-                {
-                    btnEliminar.Visible = false;
-                }
-            }
+            Session["articuloUbicacion"] = articuloUbicacion;
+
+            String url = Page.ResolveUrl("~/Articulo/ArticuloUbicaciones.aspx");
+            Response.Redirect(url);
         }
         #endregion
-
     }
 }

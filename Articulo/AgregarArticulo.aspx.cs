@@ -12,9 +12,10 @@ namespace SIBO.Articulo
     {
 
         #region variables globales
-        ArticuloServicios recepcionistaServicios = new ArticuloServicios();
+        ArticuloServicios articuloServicios = new ArticuloServicios();
         #endregion
 
+        #region page load
         protected void Page_Load(object sender, EventArgs e)
         {
             //controla los menus q se muestran y las pantallas que se muestras segun el rol que tiene el usuario
@@ -22,30 +23,14 @@ namespace SIBO.Articulo
             int[] rolesPermitidos = { 2 };
             Utilidades.escogerMenu(Page, rolesPermitidos);
 
-            //devuelve los permisos de la pantalla en el siguiente orden:
-            //[0]=ver
-            //[1]=Nuevo
-            //[2]=Editar
-            //[3]=Eliminar
-            Boolean[] permisos = Utilidades.permisosPorPagina(Page, "AdministrarArticuloes");
-
-            if (!permisos[1])
-            {
-                String url = Page.ResolveUrl("~/Default.aspx");
-                Response.Redirect(url);
-            }
-
             if (!Page.IsPostBack)
             {
-             
-                               
                 txbNombreArticulo.Attributes.Add("oninput", "validarTexto(this)");
+                txbNombreArticulo.AutoCompleteType = AutoCompleteType.DisplayName;
                 txbDescripcion.Attributes.Add("oninput", "validarTexto(this)");
-                txbExistenciasArticulo.Attributes.Add("oninput", "validarTexto(this)");
-                txbCriticaArticulo.Attributes.Add("oninput", "validarTexto(this)");
-                cldFechaIngresoArticulo.Attributes.Add("oninput", "validarTexto(this)");
             }
         }
+        #endregion
 
         #region logica
         /// <summary>
@@ -64,15 +49,11 @@ namespace SIBO.Articulo
             Boolean validados = true;
             divNombreArticuloIncorrecto.Style.Add("display", "none");
             divDescripcionArticuloIncorrecto.Style.Add("display", "none");
-            divExistenciasArticuloIncorrecto.Style.Add("display", "none");
-            divCriticaArticuloIncorrecto.Style.Add("display", "none");
-            divFechaArticuloIncorrecto.Style.Add("display", "none");
+            divCodigoArticuloIncorrecto.Style.Add("display", "none");
 
             txbNombreArticulo.CssClass = "form-control";
             txbDescripcion.CssClass = "form-control";
-            txbExistenciasArticulo.CssClass = "form-control";
-            txbCriticaArticulo.CssClass = "form-control";
-            
+            txbCodigo.CssClass = "form-control";
 
             #region validacion nombre Articulo
             String nombreArticulo = txbNombreArticulo.Text;
@@ -87,44 +68,33 @@ namespace SIBO.Articulo
             #endregion
 
             #region validacion descripcion Articulo
-            String descripcionArticulo = txbNombreArticulo.Text;
+            String descripcionArticulo = txbDescripcion.Text;
 
             if (descripcionArticulo.Trim() == "")
             {
-                txbNombreArticulo.CssClass = "form-control alert-danger";
+                txbDescripcion.CssClass = "form-control alert-danger";
                 divNombreArticuloIncorrecto.Style.Add("display", "block");
 
                 validados = false;
             }
             #endregion
 
-            #region validacion cantidad existencias Articulo
-            String cantidadExistencias = txbExistenciasArticulo.Text;
+            #region validacion descripcion Articulo
+            String codigoArticulo = txbCodigo.Text;
 
-            if (cantidadExistencias.Trim() == "")
+            if (codigoArticulo.Trim() == "")
             {
-                txbExistenciasArticulo.CssClass = "form-control alert-danger";
-                divExistenciasArticuloIncorrecto.Style.Add("display", "block");
+                txbCodigo.CssClass = "form-control alert-danger";
+                divCodigoArticuloIncorrecto.Style.Add("display", "block");
 
                 validados = false;
             }
             #endregion
-
-            #region validacion cantidad critica Articulo
-            String criticaArticulo = txbCriticaArticulo.Text;
-
-            if (criticaArticulo.Trim() == "")
-            {
-                txbCriticaArticulo.CssClass = "form-control alert-danger";
-                divCriticaArticuloIncorrecto.Style.Add("display", "block");
-
-                validados = false;
-            }
-            #endregion
-
             return validados;
         }
         #endregion
+
+        #region eventos
 
         /// <summary>
         /// Fabián Quirós Masís
@@ -141,25 +111,131 @@ namespace SIBO.Articulo
             if (validarCampos())
             {
                 Entidades.Articulo articuloNuevo = new Entidades.Articulo();
+                articuloNuevo.codigoArticulo = txbCodigo.Text;
 
-                articuloNuevo.nombreArticulo = txbNombreArticulo.Text;
-                articuloNuevo.descripcion = txbDescripcion.Text;
-                articuloNuevo.cantidadTotal = Convert.ToInt32(txbExistenciasArticulo.Text);
-                articuloNuevo.cantidadCritica = Convert.ToInt32(txbCriticaArticulo.Text);
-                articuloNuevo.fechaIngreso = cldFechaIngresoArticulo.SelectedDate;
-                
+                if (!articuloServicios.existeArticulo(articuloNuevo.codigoArticulo))
+                {
+                    articuloNuevo.nombreArticulo = txbNombreArticulo.Text;
+                    articuloNuevo.descripcion = txbDescripcion.Text;
+                    articuloNuevo.fechaIngreso = DateTime.Now;
+                    if (chkCritica.Checked)
+                    {
+                        articuloNuevo.cantidadCritica = Convert.ToInt32(txbCantidadCritica.Text);
+                    }
+                    if (txbTiempoEntrega.Text != null && txbTiempoEntrega.Text != "")
+                    {
+                        articuloNuevo.tiempoEntrega = Convert.ToInt32(txbTiempoEntrega.Text);
+                    }
+                    if (txbGastoAnual.Text != null && txbGastoAnual.Text != "")
+                    {
+                        articuloNuevo.gastoAnualAproximado = Convert.ToInt32(txbGastoAnual.Text);
+                    }
 
-                recepcionistaServicios.insertarArticulo(articuloNuevo);
+                    articuloServicios.insertarArticulo(articuloNuevo);
 
-                String url = Page.ResolveUrl("~/Articulo/AdministrarArticulos.aspx");
-                Response.Redirect(url);
+                    String url = Page.ResolveUrl("~/Articulo/AdministrarArticulos.aspx");
+                    Response.Redirect(url);
+                }
+                else
+                {
+                    (this.Master as SiteMaster).Mensaje("El codigo del articulo ya se encuentra registrado. Por favor verifiquelo!", "¡Alerta!");
+                }
             }
         }
-
+        /// <summary>
+        /// Fabián Quirós Masís
+        /// 09/04/2018
+        /// Efecto: Devuelve a la página de administración de articulos 
+        /// Requiere:-
+        /// Modifica:-
+        /// Devuelve:-
+        /// </summary>
+        /// <returns>-</returns>
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
             String url = Page.ResolveUrl("~/Articulo/AdministrarArticulos.aspx");
             Response.Redirect(url);
         }
+
+        /// <summary>
+        /// Fabián Quirós Masís
+        /// 09/04/2018
+        /// Efecto: Verifica que el gasto anual y tiempo de entre no sean nulos o negativos y calcula la cantidad critica
+        /// Requiere:-
+        /// Modifica:-
+        /// Devuelve:-
+        /// </summary>
+        /// <returns>-</returns>
+        protected void chkCritica_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(txbGastoAnual.Text))
+            {
+                int gastoAnual = Convert.ToInt32(txbGastoAnual.Text);
+                Double[] variables = articuloServicios.getVariables();
+                if (String.IsNullOrEmpty(txbTiempoEntrega.Text))
+                {
+                    Double tiempoEntrega = Convert.ToDouble(txbTiempoEntrega.Text);
+                    //[0] = dias habiles por año
+                    Double cantidadCritica = (gastoAnual / variables[0]) * tiempoEntrega;
+                    txbCantidadCritica.Text = "" + Math.Ceiling(cantidadCritica);
+                }
+                else
+                {
+                    //[0] = dias habiles por año, [1] tiempo de entrega por defecto
+                    txbCantidadCritica.Text = "" + Math.Ceiling((gastoAnual / variables[0]) * variables[1]);
+                }
+            }
+            else
+            {
+                chkCritica.Checked = false;
+                (this.Master as SiteMaster).Mensaje("Para calcular la cantidad critica es necesario al menos ingresar el gasto aproximado anual.", "¡Alerta!");
+            }
+        }
+
+        /// <summary>
+        /// Fabián Quirós Masís
+        /// 09/04/2018
+        /// Efecto: Verifica que el gasto anual no sean nulos o negativos
+        /// Requiere:-
+        /// Modifica:-
+        /// Devuelve:-
+        /// </summary>
+        /// <returns>-</returns>
+        protected void txbTiempoEntrega_TextChanged(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(txbTiempoEntrega.Text))
+            {
+                int tiempoEntrega = Convert.ToInt32(txbTiempoEntrega.Text);
+                if (tiempoEntrega < 0)
+                {
+                    txbTiempoEntrega.Text = "";
+                    (this.Master as SiteMaster).Mensaje("El tiempo de entrega no puede ser un numero negativo.", "¡Alerta!");
+                }
+            }
+        }
+
+        /// <summary>
+        /// Fabián Quirós Masís
+        /// 09/04/2018
+        /// Efecto: Verifica que el gasto anual no sean nulos o negativos
+        /// Requiere:-
+        /// Modifica:-
+        /// Devuelve:-
+        /// </summary>
+        /// <returns>-</returns>
+        protected void txbGastoAnual_TextChanged(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(txbGastoAnual.Text))
+            {
+                int gastoAnual = Convert.ToInt32(txbGastoAnual.Text);
+                if (gastoAnual < 0)
+                {
+                    txbGastoAnual.Text = "";
+                    (this.Master as SiteMaster).Mensaje("El gasto anual no puede ser un numero negativo.", "¡Alerta!");
+                }
+            }
+        }
+        #endregion
+
     }
 }

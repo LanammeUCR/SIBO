@@ -94,42 +94,6 @@ namespace SIBO.Bodega {
         protected global::System.Web.UI.WebControls.Label lblDireccionBodegaIncorrecto;
         
         /// <summary>
-        /// Control lblTelefonoBodega.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTelefonoBodega;
-        
-        /// <summary>
-        /// Control txbTelefonoBodega.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbTelefonoBodega;
-        
-        /// <summary>
-        /// Control divTelefonoBodegaIncorrecto.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divTelefonoBodegaIncorrecto;
-        
-        /// <summary>
-        /// Control lblTeléfonoBodegaIncorrecto.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTeléfonoBodegaIncorrecto;
-        
-        /// <summary>
         /// Control btnAgregar.
         /// </summary>
         /// <remarks>

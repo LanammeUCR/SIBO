@@ -8,11 +8,10 @@
 //------------------------------------------------------------------------------
 
 namespace SIBO {
-
-
-    public partial class SiteMaster
-    {
-
+    
+    
+    public partial class SiteMaster {
+        
         /// <summary>
         /// Control Head1.
         /// </summary>
@@ -21,7 +20,7 @@ namespace SIBO {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
-
+        
         /// <summary>
         /// Control HeadContent.
         /// </summary>
@@ -30,7 +29,7 @@ namespace SIBO {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder HeadContent;
-
+        
         /// <summary>
         /// Control form1.
         /// </summary>
@@ -39,7 +38,7 @@ namespace SIBO {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
+        
         /// <summary>
         /// Control menu.
         /// </summary>
@@ -48,7 +47,7 @@ namespace SIBO {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl menu;
-
+        
         /// <summary>
         /// Control MenuAdministrador.
         /// </summary>
@@ -57,7 +56,16 @@ namespace SIBO {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuAdministrador;
-
+        
+        /// <summary>
+        /// Control MenuUsuario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuUsuario;
+        
         /// <summary>
         /// Control username.
         /// </summary>
@@ -66,7 +74,7 @@ namespace SIBO {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor username;
-
+        
         /// <summary>
         /// Control BtnSalir.
         /// </summary>
@@ -75,7 +83,7 @@ namespace SIBO {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BtnSalir;
-
+        
         /// <summary>
         /// Control MainContent.
         /// </summary>
@@ -84,7 +92,7 @@ namespace SIBO {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
-
+        
         /// <summary>
         /// Control mensaje.
         /// </summary>
@@ -93,7 +101,7 @@ namespace SIBO {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label mensaje;
-
+        
         /// <summary>
         /// Control alert.
         /// </summary>
@@ -102,7 +110,7 @@ namespace SIBO {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label alert;
-
+        
         /// <summary>
         /// Control ScriptContent.
         /// </summary>

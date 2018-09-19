@@ -19,7 +19,7 @@
 
             <%-- campos a llenar Primera BD--%>
             <div class="col-md-12 col-xs-12 col-sm-12 ">
-                <asp:Label ID="Label1" runat="server" Text="Base de Control de Trabajos de Laboratorio:" Font-Size="Large" ForeColor="Black" CssClass="label"></asp:Label>
+                <asp:Label ID="Label1" runat="server" Text="Base de Sistema de Inventario de Bodegas:" Font-Size="Large" ForeColor="Black" CssClass="label"></asp:Label>
             </div>
             <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
                 <br />

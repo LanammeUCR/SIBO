@@ -11,7 +11,8 @@ namespace SIBO
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            int[] rolesPermitidos = { 2, 13 };
+            Utilidades.escogerMenu(Page, rolesPermitidos);
         }
     }
 }

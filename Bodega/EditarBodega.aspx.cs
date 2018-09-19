@@ -21,28 +21,13 @@ namespace SIBO.Bodega
             int[] rolesPermitidos = { 2 };
             Utilidades.escogerMenu(Page, rolesPermitidos);
 
-            //devuelve los permisos de la pantalla en el siguiente orden:
-            //[0]=ver
-            //[1]=Nuevo
-            //[2]=Editar
-            //[3]=Eliminar
-            Boolean[] permisos = Utilidades.permisosPorPagina(Page, "AdministrarBodegaes");
-
-            if (!permisos[1])
-            {
-                String url = Page.ResolveUrl("~/Default.aspx");
-                Response.Redirect(url);
-            }
-
             if (!Page.IsPostBack)
             {
                 Entidades.Bodega bodegaEditar = (Entidades.Bodega)Session["bodegaEditar"];
                 txtNombreBodega.Text = bodegaEditar.nombre;
                 txtNombreBodega.Attributes.Add("oninput", "validarTexto(this)");
                 txbDireccionBodega.Text = bodegaEditar.direccion;
-                txbDireccionBodega.Attributes.Add("oninput", "validarTexto(this)");
-                txbTelefonoBodega.Text = bodegaEditar.telefono;
-                txbTelefonoBodega.Attributes.Add("oninput", "validarTexto(this)");
+                txbDireccionBodega.Attributes.Add("oninput", "validarTexto(this)");             
             }
         }
         #region logica
@@ -61,10 +46,11 @@ namespace SIBO.Bodega
         {
             Boolean validados = true;
             divNombreBodegaIncorrecto.Style.Add("display", "none");
-            divTelefonoBodegaIncorrecto.Style.Add("display", "none");
+            divDireccionBodegaIncorrecto.Style.Add("display", "none");
+          
 
             txtNombreBodega.CssClass = "form-control";
-            txbTelefonoBodega.CssClass = "form-control";
+            txbDireccionBodega.CssClass = "form-control";
 
             #region validacion nombre bodega
             String nombreBodega = txtNombreBodega.Text;
@@ -77,17 +63,17 @@ namespace SIBO.Bodega
                 validados = false;
             }
             #endregion
-            #region validacion telefono bodega
-            String telefonoBodega = txbTelefonoBodega.Text;
+            #region validacion direccion bodega
+            String direccionBodega = txbDireccionBodega.Text;
 
-            if (telefonoBodega.Trim() == "")
+            if (direccionBodega.Trim() == "")
             {
-                txbTelefonoBodega.CssClass = "form-control alert-danger";
-                divTelefonoBodegaIncorrecto.Style.Add("display", "block");
+                txbDireccionBodega.CssClass = "form-control alert-danger";
+                divDireccionBodegaIncorrecto.Style.Add("display", "block");
 
                 validados = false;
             }
-            #endregion
+            #endregion         
             return validados;
         }
         #endregion
@@ -107,8 +93,7 @@ namespace SIBO.Bodega
             {
                 Entidades.Bodega bodegaEditar = (Entidades.Bodega)Session["bodegaEditar"];
                 bodegaEditar.nombre = txtNombreBodega.Text;
-                bodegaEditar.direccion = txbDireccionBodega.Text;
-                bodegaEditar.telefono = txbTelefonoBodega.Text;
+                bodegaEditar.direccion = txbDireccionBodega.Text;              
 
                 bodegaServicios.actualizarBodega(bodegaEditar,(String)Session["nombreCompleto"]);
 
@@ -117,6 +102,15 @@ namespace SIBO.Bodega
             }
         }
 
+        /// <summary>
+        /// Fabián Quirós Masís
+        /// 09/04/2018
+        /// Efecto: Redirecciona a la pantalla de Administrar Bodegas
+        /// Requiere:-
+        /// Modifica:-
+        /// Devuelve:-
+        /// </summary>
+        /// <returns>-</returns>
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
             String url = Page.ResolveUrl("~/Bodega/AdministrarBodega.aspx");
